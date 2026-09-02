@@ -8,13 +8,13 @@ thực phẩm. Nhiều loài nấm ký sinh trên cây trồng sinh ra độc t�
 năm 1951 tại Pont-Saint-Esprit (Pháp) là một ví dụ: nấm *Claviceps purpurea* ký
 sinh trên lúa mạch đen sinh độc tố ergot alkaloid, khiến 250 đến 300 người rơi
 vào trạng thái loạn thần, ảo giác và hoại tử chi, ít nhất 5 đến 7 người tử vong
-[@ergot1951]. Aflatoxin do nấm *Aspergillus flavus* sinh ra trên ngô, lạc và
+[@ergot_bmj; @ergot1951]. Aflatoxin do nấm *Aspergillus flavus* sinh ra trên ngô, lạc và
 ngũ cốc thì vẫn đang gây ngộ độc gan cấp tính và ung thư gan tích lũy cho đến
 nay [@who_mycotoxins].
 
 Về kinh tế, sâu bệnh hại làm thất thoát 10% đến 40% sản lượng nông nghiệp trước
 thu hoạch, tương đương khoảng 220 tỷ USD mỗi năm trên phạm vi toàn cầu
-[@cabi_croploss]. Thiệt hại dồn nặng nhất lên các nước đang phát triển, nơi
+[@cabi_croploss; @geopard_earlydetect]. Thiệt hại dồn nặng nhất lên các nước đang phát triển, nơi
 nông nghiệp vừa là ngành kinh tế chính vừa là sinh kế của phần lớn dân cư.
 
 Việt Nam nằm trong vùng nhiệt đới gió mùa với độ ẩm cao, nên áp lực dịch bệnh

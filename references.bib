@@ -1,7 +1,16 @@
 % Bibliography for the thesis. UTF-8.
-% Cite from Markdown with [@key] — e.g. [@devlin2019].
-% The two entries below are real papers, kept only as working examples of the
-% format. Replace them with your own sources.
+% Cite from Markdown with [@key] — e.g. [@cabi_croploss].
+%
+% Trạng thái: tiêu đề và URL đã được cập nhật theo danh sách nguồn.
+% Trường `urldate` được đặt tạm là ngày biên soạn (2026-09-02); sửa lại nếu
+% bạn truy cập vào ngày khác. Các trường `author` và `year` còn thiếu được
+% đánh dấu TODO thay vì điền phỏng đoán — citeproc sẽ hiện "không ngày" cho
+% tới khi bổ sung.
+
+% ---------------------------------------------------------------------------
+% VÍ DỤ — chỉ dùng để minh hoạ định dạng, hiện còn được trích trong
+% chapters/02-litreview.md. Xoá cả hai khi viết Chương 2 thật.
+% ---------------------------------------------------------------------------
 
 @inproceedings{devlin2019,
   author    = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
@@ -21,52 +30,193 @@
 }
 
 % ---------------------------------------------------------------------------
-% Nguồn trích dẫn trong mục 1.1. Đặt vấn đề.
-%
-% CHƯA HOÀN CHỈNH. Mỗi mục dưới đây chỉ chứa đúng thông tin đã nêu trong bản
-% thảo; tác giả, năm xuất bản và URL chưa được xác minh nên để trống có chủ ý.
-% Cần bổ sung trước khi nộp, nếu không danh mục tài liệu tham khảo sẽ hiện
-% "không ngày tháng" thay cho năm.
+% NHÓM 1 — Tác hại của bệnh hại thực vật và vai trò của phát hiện sớm
 % ---------------------------------------------------------------------------
-
-@misc{ergot1951,
-  title = {1951 {Pont-Saint-Esprit} mass poisoning},
-  note  = {TODO: bổ sung năm, URL và ngày truy cập.
-           Bản thảo dẫn Wikipedia và một báo cáo lâm sàng trên
-           British Medical Journal}
-}
-
-@misc{who_mycotoxins,
-  author       = {{World Health Organization}},
-  title        = {Mycotoxins},
-  organization = {World Health Organization},
-  note         = {TODO: bổ sung năm phát hành, URL và ngày truy cập}
-}
 
 @misc{cabi_croploss,
   author       = {{CABI}},
   title        = {Global Burden of Crop Loss},
   organization = {CABI},
-  note         = {TODO: bổ sung năm, URL và ngày truy cập.
-                  Con số 220 tỷ USD trong bản thảo dẫn theo phân tích
-                  của GeoPard Tech}
+  url          = {https://www.cabi.org/projects/global-burden-of-crop-loss/},
+  urldate      = {2026-09-02},
+  note         = {TODO: bổ sung năm phát hành của dự án}
 }
 
+@misc{geopard_earlydetect,
+  author  = {{GeoPard Technologies}},
+  title   = {Role of Deep Learning Computer Vision Applications for Early
+             Plant Disease Detection},
+  url     = {https://geopard.tech/blog/role-of-deep-learning-computer-vision-applications-for-early-plant-disease-detection/},
+  urldate = {2026-09-02},
+  note    = {Nguồn của con số thiệt hại 220 tỷ USD/năm. TODO: bổ sung năm đăng}
+}
+
+@article{frontiers2023review,
+  title   = {An advanced deep learning models-based plant disease detection:
+             A review of recent research},
+  journal = {Frontiers in Plant Science},
+  volume  = {14},
+  year    = {2023},
+  doi     = {10.3389/fpls.2023.1158933},
+  url     = {https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1158933/full},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung danh sách tác giả}
+}
+
+@misc{arxiv2023leafreview,
+  title        = {A comprehensive review on Plant Leaf Disease detection using
+                  Deep learning},
+  howpublished = {arXiv preprint arXiv:2308.14087},
+  year         = {2023},
+  url          = {https://arxiv.org/pdf/2308.14087},
+  urldate      = {2026-09-02},
+  note         = {TODO: bổ sung danh sách tác giả}
+}
+
+@article{tubitak_tomato,
+  title   = {A deep learning model for accurate tomato leaf disease
+             identification},
+  journal = {Turkish Journal of Electrical Engineering and Computer Sciences},
+  volume  = {34},
+  number  = {1},
+  url     = {https://journals.tubitak.gov.tr/elektrik/vol34/iss1/6/},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung tác giả và năm}
+}
+
+@misc{hoptri_benhhai,
+  author  = {{Hợp Trí Summit}},
+  title   = {Bệnh hại cây trồng là gì? Các loại bệnh hại cây trồng và
+             cách phòng trừ},
+  url     = {https://www.hoptrisummit.com/tin-tuc/tin-nong-nghiep/benh-hai-cay-trong},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung năm đăng}
+}
+
+@misc{loigiaihay_sauhbenh,
+  title   = {Lý thuyết tác hại của sâu, bệnh đối với cây trồng --- Công nghệ 10},
+  url     = {https://loigiaihay.com/ly-thuyet-tac-hai-cua-sau-benh-doi-voi-cay-trong-cong-nghe-10-a111201.html},
+  urldate = {2026-09-02},
+  note    = {Tài liệu phổ thông. Cân nhắc thay bằng nguồn học thuật
+             trước khi nộp}
+}
+
+% ---------------------------------------------------------------------------
+% NHÓM 2 — Tác hại trực tiếp đến sức khoẻ con người, các ca ngộ độc thực tế
+% ---------------------------------------------------------------------------
+
+@misc{who_mycotoxins,
+  author       = {{World Health Organization}},
+  title        = {Mycotoxins},
+  organization = {World Health Organization},
+  howpublished = {Fact sheet},
+  url          = {https://www.who.int/news-room/fact-sheets/detail/mycotoxins},
+  urldate      = {2026-09-02},
+  note         = {TODO: bổ sung năm phát hành của fact sheet}
+}
+
+@misc{ergot1951,
+  title        = {1951 {Pont-Saint-Esprit} mass poisoning},
+  howpublished = {Wikipedia},
+  url          = {https://en.wikipedia.org/wiki/1951_Pont-Saint-Esprit_mass_poisoning},
+  urldate      = {2026-09-02}
+}
+
+@article{ergot_bmj,
+  title   = {Ergot Poisoning at {Pont St. Esprit}},
+  journal = {British Medical Journal},
+  url     = {https://pmc.ncbi.nlm.nih.gov/articles/PMC2069953/},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung tác giả, năm, tập và số trang.
+             Nguồn sơ cấp, nên ưu tiên hơn mục Wikipedia}
+}
+
+@misc{wiki_ergotism,
+  title        = {Ergotism},
+  howpublished = {Wikipedia},
+  url          = {https://en.wikipedia.org/wiki/Ergotism},
+  urldate      = {2026-09-02}
+}
+
+@incollection{statpearls_aflatoxin,
+  title     = {Aflatoxin Toxicity},
+  booktitle = {StatPearls},
+  publisher = {StatPearls Publishing},
+  url       = {https://www.ncbi.nlm.nih.gov/books/NBK557781/},
+  urldate   = {2026-09-02},
+  note      = {TODO: bổ sung tác giả và năm cập nhật}
+}
+
+@article{pubmed_kingdomborder,
+  title   = {Crossing the kingdom border: Human diseases caused by
+             plant pathogens},
+  url     = {https://pubmed.ncbi.nlm.nih.gov/32307848/},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung tác giả, tạp chí, năm (PMID 32307848)}
+}
+
+@misc{omics_crossborder,
+  title   = {Plant Disease Pathogens May Cross The Ecological Border And
+             Cause Diseases To Humans},
+  url     = {https://www.omicsonline.org/proceedings/plant-disease-pathogens-may-cross-the-ecological-border-and-cause-diseases-to-humans-90596.html},
+  urldate = {2026-09-02},
+  note    = {Kỷ yếu hội thảo. TODO: bổ sung tác giả và năm}
+}
+
+@article{kenya2004_pmc,
+  title   = {Outbreak of an Acute Aflatoxicosis in Kenya in 2004:
+             Identification of the Causal Agent},
+  url     = {https://pmc.ncbi.nlm.nih.gov/articles/PMC1855601/},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung tác giả, tạp chí và năm}
+}
+
+@misc{kenya2004_cdc,
+  author       = {{Centers for Disease Control and Prevention}},
+  title        = {Outbreak of Aflatoxin Poisoning --- Eastern and Central
+                  Provinces, Kenya, January--July 2004},
+  howpublished = {Morbidity and Mortality Weekly Report},
+  url          = {https://www.cdc.gov/mmwr/preview/mmwrhtml/mm5334a4.htm},
+  urldate      = {2026-09-02},
+  note         = {TODO: xác nhận tập/số và năm (mã bài mm5334a4)}
+}
+
+% ---------------------------------------------------------------------------
+% NHÓM 3 — Số liệu thực tế tại Việt Nam và ứng dụng AI trên thiết bị biên
+% ---------------------------------------------------------------------------
+
 @misc{sauring_tiengiang,
-  title = {Bệnh cháy lá trên sầu riêng tại Tiền Giang},
-  note  = {TODO: bổ sung tên tác giả, tiêu đề chính xác của bài báo, năm và URL.
-           Bản thảo dẫn Báo Nông nghiệp và Môi trường}
+  author  = {{Báo Nông nghiệp và Môi trường}},
+  title   = {Hiện tượng cháy lá sầu riêng gia tăng và khuyến cáo phòng trị},
+  url     = {https://nongnghiepmoitruong.vn/tri-thuc-nong-dan/hien-tuong-chay-la-sau-rieng-gia-tang-va-khuyen-cao-phong-tri-d379958.html},
+  urldate = {2026-09-02},
+  note    = {TODO: bổ sung tên tác giả bài báo và ngày đăng}
 }
 
 @phdthesis{gisat_caphe,
-  title  = {Nghiên cứu bệnh gỉ sắt hại cà phê tại Việt Nam},
-  school = {TODO: bổ sung tên cơ sở đào tạo},
-  note   = {TODO: bổ sung tác giả, tiêu đề chính xác và năm bảo vệ}
+  title   = {Nghiên cứu bệnh gỉ sắt cà phê {Hemileia vastatrix B et Br}
+             và biện pháp phòng trừ tại Việt Nam},
+  school  = {TODO: bổ sung tên cơ sở đào tạo},
+  url     = {http://luanan.nlv.gov.vn/luanan?a=d&d=TTkFqWqxgkCq1993.1.13},
+  urldate = {2026-09-02},
+  note    = {Thư viện Luận án Tiến sĩ, Thư viện Quốc gia Việt Nam.
+             TODO: bổ sung tác giả và năm bảo vệ}
 }
 
 @misc{sakura_vtv10,
-  title = {Nhà nông và Công nghệ: ứng dụng học sâu chẩn đoán bệnh cây
-           tại Sakura Farm, Khánh Hòa},
-  note  = {TODO: bổ sung năm và ngày phát sóng. Bản thảo dẫn chương trình
-           "Nhà nông \& Công nghệ" trên VTV10}
+  title   = {Bác sĩ số trên đồng ruộng: Ứng dụng AI giám sát sức khoẻ
+             sầu riêng tại Khánh Hoà},
+  url     = {https://www.facebook.com/BinhDienDauTrau/posts/1508530654641953/},
+  urldate = {2026-09-02},
+  note    = {Bài đăng Facebook dẫn lại phóng sự VTV10.
+             TODO: tìm nguồn gốc trên vtv.vn và kiểm chứng con số 95--97\%}
+}
+
+@misc{tuoitre_zalominiapp,
+  author  = {{Báo Tuổi Trẻ}},
+  title   = {Học sinh dùng AI nhận diện và xử lý sâu bệnh trên cây trồng},
+  url     = {https://tuoitre.vn/giaoduc/hoc-sing-dung-ai-nhan-dien-va-xu-ly-sau-benh-tren-cay-trong-108903657.htm},
+  urldate = {2026-09-02},
+  note    = {TODO: kiểm tra lại URL, đường dẫn có vẻ sai chính tả
+             ("hoc-sing"). Bổ sung ngày đăng}
 }
