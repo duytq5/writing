@@ -1,0 +1,14 @@
+# Generated documents
+build/
+
+# Local Drive upload settings (remote name, folder ID) — never commit
+.upload.env
+
+# macOS
+.DS_Store
+
+# Editor cruft
+*.swp
+*~
+.vscode/
+.idea/

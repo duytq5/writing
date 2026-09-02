@@ -1,0 +1,22 @@
+# Pandoc metadata for the thesis.
+# Loaded via `--metadata-file=metadata.yaml` (see Makefile).
+# Fill in the empty fields below; nothing else needs to change.
+
+title: ""
+subtitle: ""
+author: ""
+date: ""
+
+# Vietnamese. Sets the document language in the .docx so Word and Google Docs
+# spell-check as Vietnamese rather than English. Leave this as "vi".
+lang: vi
+
+# Bibliography used by --citeproc. Path is relative to the repo root,
+# which is where the Makefile runs pandoc from.
+bibliography: references.bib
+
+# Heading pandoc puts above the generated reference list.
+reference-section-title: "Tài liệu tham khảo"
+
+# Make in-text citations clickable links to the reference list.
+link-citations: true
