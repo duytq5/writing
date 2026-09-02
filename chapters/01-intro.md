@@ -35,13 +35,20 @@ triệu chứng đủ rõ để nhận ra thì bệnh thường đã lan, nên h
 thấp. Phun đại trà cũng đẩy chi phí vật tư lên cao, làm suy thoái hệ sinh thái
 đất và để lại dư lượng thuốc trên nông sản.
 
-Chẩn đoán bệnh qua hình ảnh bằng học sâu đã cho kết quả khả quan trong sản xuất
-thực tế: mô hình triển khai tại trang trại Sakura Farm (Khánh Hòa) đạt độ chính
-xác 95% đến 97% [@sakura_vtv10]. Vấn đề còn lại là đưa năng lực chẩn đoán đó
-xuống thiết bị mà người nông dân đã có sẵn. Luận văn này hướng tới một hệ thống
-nhận diện bệnh trên lá đủ nhẹ để chạy trên smartphone, cho phép phát hiện sớm
-ngay tại vườn, qua đó giảm thiệt hại năng suất và hạn chế việc lạm dụng thuốc
-bảo vệ thực vật.
+Những phân tích trên cho thấy hai yêu cầu phải được đáp ứng cùng lúc. Bệnh cần
+được phát hiện sớm, khi triệu chứng còn khu trú và việc can thiệp còn kịp. Đồng
+thời, năng lực chẩn đoán phải nằm trong tay người trực tiếp canh tác, thay vì
+phụ thuộc vào cán bộ kỹ thuật hay phòng thí nghiệm vốn không thể có mặt ở từng
+vườn.
+
+Smartphone đáp ứng được cả hai điều kiện đó: người nông dân đã có sẵn máy và
+mang theo khi thăm vườn, camera cũng đủ để ghi lại triệu chứng trên lá. Tuy
+nhiên, nếu đặt mô hình trên máy chủ và truy cập qua mạng, hệ thống sẽ phụ thuộc
+vào một điều kiện không phải lúc nào cũng có ngoài đồng là kết nối ổn định. Mô
+hình vì thế cần chạy trực tiếp trên thiết bị. Ràng buộc này định hình bài toán
+của luận văn: xây dựng một mô hình nhận diện bệnh trên lá đủ chính xác để người
+dùng tin được, đồng thời đủ nhỏ và nhanh để thực thi trên phần cứng hạn chế của
+một chiếc điện thoại phổ thông, không cần kết nối mạng.
 
 ## 1.2. Mục tiêu nghiên cứu
 
