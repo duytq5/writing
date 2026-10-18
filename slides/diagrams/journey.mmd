@@ -1,0 +1,23 @@
+%% Hành trình từ ảnh chụp ngoài vườn đến mô hình tốt hơn trong ứng dụng. Số = thứ tự.
+%% Chỉ dùng những gì Phần 1 đã nói (vai trò và nhu cầu), chưa nói giải pháp.
+%%{init: {"flowchart": {"nodeSpacing": 20, "rankSpacing": 14, "padding": 8, "subGraphTitleMargin": {"top": 6, "bottom": 10}}}}%%
+flowchart LR
+  classDef app fill:#f3e8fd,stroke:#8250df,color:#1f2933
+  classDef lab fill:#fff8c5,stroke:#bf8700,color:#1f2933
+  classDef mle fill:#e7f0fd,stroke:#2563eb,color:#1f2933
+  classDef adm fill:#fde8e8,stroke:#cf222e,color:#1f2933
+  classDef sys fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+
+  subgraph R1["Thu thập ảnh"]
+    direction TB
+    S1["1 · Người dùng đăng nhập,<br/>chọn cây trồng"]:::app --> S2["2 · Chụp lá, nhận chẩn đoán<br/>kể cả khi không có mạng"]:::app --> S3[["3 · Ảnh được gửi<br/>về hệ thống"]]:::sys
+  end
+  subgraph R2["Gán nhãn"]
+    direction TB
+    S4["4 · Kỹ sư ML xem ảnh mới,<br/>yêu cầu vòng gán nhãn"]:::mle --> S5["5 · Quản trị viên duyệt"]:::adm --> S6[["6 · Hệ thống chọn ảnh<br/>mô hình chưa chắc nhất"]]:::sys --> S7["7 · Chuyên gia gán nhãn<br/>các ảnh đó"]:::lab --> S8[["8 · Ảnh vừa gán nhãn được<br/>thêm vào dữ liệu huấn luyện"]]:::sys
+  end
+  subgraph R3["Huấn luyện và phát hành"]
+    direction TB
+    S9["9 · Kỹ sư ML yêu cầu<br/>huấn luyện,<br/>quản trị viên duyệt"]:::mle --> S10[["10 · Hệ thống huấn luyện<br/>mô hình mới"]]:::sys --> S11["11 · Kỹ sư ML chọn<br/>mô hình tốt nhất,<br/>quản trị viên duyệt"]:::mle --> S12["12 · Ứng dụng của người dùng<br/>nhận mô hình mới"]:::app
+  end
+  R1 --> R2 --> R3

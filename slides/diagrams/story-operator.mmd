@@ -1,0 +1,11 @@
+%% Câu chuyện người dùng: Người vận hành. Tôi muốn ... để ...
+flowchart LR
+  classDef role fill:#1e5631,stroke:#1e5631,color:#ffffff
+  classDef want fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+  classDef why fill:#ffffff,stroke:#9aa5b1,color:#52606d
+  R(["Người vận hành"]):::role
+  R --> W1["Xem ảnh mới và ảnh chưa gán nhãn"]:::want -. "để" .-> B1["Biết khi nào nên chạy vòng"]:::why
+  R --> W2["Bắt đầu vòng bằng một tệp cấu hình"]:::want -. "để" .-> B2["Có phiên bản và người duyệt"]:::why
+  R --> W3["Theo dõi vòng đang ở bước nào"]:::want -. "để" .-> B3["Biết khi nào chờ nhãn, khi nào lỗi"]:::why
+  R --> W4["Phát hành mô hình bằng pull request"]:::want -. "để" .-> B4["Ứng dụng nhận mô hình mới"]:::why
+  R --> W5["Quay lui bằng git revert"]:::want -. "để" .-> B5["Gỡ mô hình lỗi nhanh, có ghi lại"]:::why

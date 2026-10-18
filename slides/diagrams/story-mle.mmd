@@ -1,0 +1,10 @@
+%% Câu chuyện người dùng: Kỹ sư học máy. Mỗi ô là một nhu cầu ("Tôi muốn ...").
+%%{init: {"flowchart": {"wrappingWidth": 700}}}%%
+flowchart LR
+  classDef role fill:#1e5631,stroke:#1e5631,color:#ffffff
+  classDef want fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+  R(["Kỹ sư học máy"]):::role
+  R --> W1["Quyết định khi nào và bao nhiêu ảnh đưa đi gán nhãn,<br/>rồi theo dõi tiến độ vòng đó"]:::want
+  R --> W2["Tự định nghĩa mô hình và cách huấn luyện,<br/>chạy huấn luyện mà không phải sửa hệ thống"]:::want
+  R --> W3["So sánh các lần huấn luyện, đưa mô hình tốt nhất<br/>đến người dùng và quay lại bản cũ khi cần"]:::want
+  R --> W4["Xem toàn bộ ảnh: đã gán nhãn,<br/>chưa gán nhãn và ảnh mới gửi về"]:::want

@@ -1,0 +1,10 @@
+%% Câu chuyện người dùng: Người gán nhãn. Mỗi ô là một nhu cầu ("Tôi muốn ...").
+%%{init: {"flowchart": {"wrappingWidth": 700}}}%%
+flowchart LR
+  classDef role fill:#1e5631,stroke:#1e5631,color:#ffffff
+  classDef want fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+  R(["Người gán nhãn"]):::role
+  R --> W1["Chỉ nhận đúng những ảnh cần mình gán nhãn,<br/>không phải lục tìm trong kho ảnh thô"]:::want
+  R --> W2["Gán nhãn ngay trên trình duyệt:<br/>xem ảnh rõ, chọn nhãn nhanh"]:::want
+  R --> W3["Thấy sẵn dự đoán của mô hình,<br/>chỉ cần xác nhận hoặc sửa"]:::want
+  R --> W4["Ảnh của người dùng chỉ chuyên gia được xem"]:::want

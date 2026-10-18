@@ -1,0 +1,9 @@
+%% Câu chuyện người dùng: Quản trị viên. Mỗi ô là một nhu cầu ("Tôi muốn ...").
+%%{init: {"flowchart": {"wrappingWidth": 700}}}%%
+flowchart LR
+  classDef role fill:#1e5631,stroke:#1e5631,color:#ffffff
+  classDef want fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+  R(["Quản trị viên"]):::role
+  R --> W1["Mọi thay đổi (vòng gán nhãn, huấn luyện, phát hành)<br/>phải được duyệt trước khi chạy"]:::want
+  R --> W2["Tra lại được ai đã làm gì, khi nào,<br/>với phiên bản code nào"]:::want
+  R --> W3["Cấp hoặc thu hồi quyền<br/>cho chuyên gia và người dùng"]:::want

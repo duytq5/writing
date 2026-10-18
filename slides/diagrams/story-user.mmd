@@ -1,0 +1,9 @@
+%% Câu chuyện người dùng: Người dùng ứng dụng. Mỗi ô là một nhu cầu ("Tôi muốn ...").
+%%{init: {"flowchart": {"wrappingWidth": 700}}}%%
+flowchart LR
+  classDef role fill:#1e5631,stroke:#1e5631,color:#ffffff
+  classDef want fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+  R(["Người dùng ứng dụng"]):::role
+  R --> W1["Chụp ảnh lá và biết ngay lá bị bệnh gì,<br/>kể cả khi ở vườn không có mạng"]:::want
+  R --> W2["Đăng nhập nhanh bằng tài khoản có sẵn (Google),<br/>không phải tạo tài khoản mới"]:::want
+  R --> W3["Dùng một ứng dụng cho nhiều loại cây trồng<br/>(cà phê, sầu riêng…)"]:::want

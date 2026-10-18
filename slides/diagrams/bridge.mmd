@@ -1,0 +1,26 @@
+%% Từ thí nghiệm học chủ động đến khi đưa vào sử dụng thật.
+flowchart LR
+  classDef lab fill:#f5f7fa,stroke:#9aa5b1,color:#52606d
+  classDef real fill:#eef6f0,stroke:#2f7d4f,color:#1f2933
+
+  subgraph EXP["Thí nghiệm"]
+    direction TB
+    E1["Oracle trả nhãn ngay"]:::lab
+    E2["Tập ảnh cố định"]:::lab
+    E3["Huấn luyện một lần"]:::lab
+    E4["Mô hình trong notebook"]:::lab
+    E5["Không ghi lại quyết định"]:::lab
+  end
+  subgraph REAL["Thực tế"]
+    direction TB
+    R1["Chuyên gia thật, cần thời gian"]:::real
+    R2["Ảnh mới gửi về liên tục"]:::real
+    R3["Huấn luyện lại nhiều vòng trên GPU"]:::real
+    R4["Mô hình trên điện thoại, quay lui được"]:::real
+    R5["Biết ai quyết định, chạy code nào"]:::real
+  end
+  E1 -- "Nhãn" --> R1
+  E2 -- "Dữ liệu" --> R2
+  E3 -- "Huấn luyện" --> R3
+  E4 -- "Mô hình" --> R4
+  E5 -- "Quyết định" --> R5
