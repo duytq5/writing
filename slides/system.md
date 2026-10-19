@@ -230,3 +230,172 @@ Hai job chạy độc lập. Job gán nhãn: hệ thống chụp lại dữ li�
 - Lọc theo lớp, tập, trạng thái, nguồn ảnh
 - Chỉ để xem, dữ liệu gốc không đổi
 
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# Phần 3. Demo
+
+Một ảnh lá cà phê mới, chưa có trong tập dữ liệu
+
+---
+
+<!-- _class: cards -->
+
+# Người dùng: đăng nhập và tải mô hình
+
+![w:1160](assets/demo/demo-tai-mo-hinh.png)
+
+- Đồng ý gửi ảnh
+- Đăng nhập bằng Google
+- Chọn mô hình
+- Tải về máy
+- Chọn model để thực hiện dự đoán
+
+<!--
+Phải đăng nhập mới tải được mô hình. Ứng dụng chỉ hiện các mô hình đã phát hành trên hệ thống. Mô hình tải về một lần, sau đó chẩn đoán ngay trên điện thoại.
+-->
+
+---
+
+<!-- _class: cards -->
+
+# Người dùng: chẩn đoán ảnh mới
+
+![w:1160](assets/demo/demo-chan-doan.png)
+
+- Chọn ảnh một chiếc lá
+- Kết quả ngay trên máy: Red spider mite, 43%
+- Ảnh thật là gỉ sắt lá cà phê: mô hình đoán sai, ảnh được gửi về để gán nhãn
+
+<!--
+Đây đúng là loại ảnh mà học chủ động cần: mô hình chưa chắc chắn. Ảnh nằm trong hàng đợi trên máy và tự gửi khi có mạng, sau đó vào kho ảnh chưa gán nhãn.
+-->
+
+---
+
+# Xem kho ảnh trong FiftyOne
+
+![h:560](assets/fiftyone/fiftyone-grid.png)
+
+<!--
+Ảnh vừa gửi từ ứng dụng nằm đầu danh sách, kèm dự đoán của ứng dụng.
+-->
+
+---
+
+# Xem kho ảnh trong FiftyOne: các trường chính
+
+![w:1160](assets/fiftyone/fiftyone-grid-annotated.png)
+
+<!--
+Lọc theo source = edge để xem ảnh từ ứng dụng, status = unlabeled để xem ảnh chưa gán nhãn. ground_truth là nhãn do chuyên gia gán. labeled_by cho biết ai gán, label_round cho biết gán ở vòng nào.
+-->
+
+
+---
+
+# Quản trị viên: mở job gán nhãn bằng một pull request
+
+![w:1160](assets/operator/pr-round-diff.png)
+
+<!--
+Quản trị viên không tự chọn ảnh. Một tệp mới trong configs/rounds/ ghi tập dữ liệu, mô hình chấm điểm, cách chọn (entropy), k = 10 và seed. CI kiểm tra tệp trước khi merge. Duyệt và merge trên GitHub là bước phê duyệt và là lịch sử.
+-->
+
+---
+
+# Merge xong: GitHub Actions khởi động job
+
+![w:1160](assets/operator/start-round-runs-annotated.png)
+
+<!--
+Merge vào main chạy workflow start-round. Workflow kiểm tra tệp, ghi job cùng người merge và commit, rồi khởi động job trong 25 giây. Job chấm điểm các ảnh, chọn 10 ảnh và mở project Label Studio ở slide sau.
+-->
+
+---
+
+# Label Studio: mỗi job gán nhãn là một project
+
+![h:560](assets/operator/label-studio-projects.png)
+
+<!--
+Mỗi job gán nhãn tạo một project. Tên project là ACTIVE khi job còn chờ nhãn, và đổi thành DONE khi đủ nhãn. Chuyên gia mở project ACTIVE để bắt đầu.
+-->
+
+---
+
+# Chuyên gia gán nhãn trong Label Studio
+
+![h:560](assets/labelstudio/labeling.png)
+
+<!--
+Chuyên gia bấm Label All Tasks. Label Studio đưa từng ảnh một, mỗi ảnh cho một người.
+-->
+
+---
+
+# Gán nhãn: một ảnh, một nhãn
+
+![w:1160](assets/labelstudio/labeling-annotated.png)
+
+<!--
+Dự đoán của mô hình được chọn sẵn, chuyên gia chỉ cần xác nhận hoặc sửa. Submit lưu nhãn và hiện ảnh tiếp theo. Khi đủ 10 ảnh, job gộp nhãn thành một phiên bản dữ liệu mới.
+-->
+
+---
+
+# Kỹ sư ML: mở job huấn luyện bằng một pull request
+
+![w:1160](assets/training/pr-training-diff-annotated.png)
+
+<!--
+Kỹ sư ML không chạy huấn luyện bằng tay. Tệp ghi phiên bản dữ liệu, công thức và các tham số. CI kiểm tra tệp. Duyệt và merge trên GitHub là bước phê duyệt và là lịch sử. Sau khi merge, GitHub Actions khởi động job huấn luyện; GPU Worker huấn luyện và ghi lần chạy vào MLflow (slide sau).
+-->
+
+---
+
+# Merge xong: GitHub Actions khởi động job huấn luyện
+
+![w:1160](assets/training/start-training-runs-annotated.png)
+
+<!--
+CI kiểm tra tệp trên pull request, rồi chạy lại trên main sau khi merge. Merge vào main chạy start-training. Workflow từ chối tệp có phiên bản dữ liệu chưa tồn tại, nên tệp huấn luyện chỉ được merge sau khi job gán nhãn đã gộp nhãn. Sau đó workflow ghi job huấn luyện kèm người merge và commit, rồi khởi động job. GPU Worker huấn luyện và ghi lần chạy vào MLflow (slide sau).
+-->
+
+---
+
+# Kỹ sư ML: xem kết quả trong MLflow
+
+![w:1160](assets/training/mlflow-run-annotated.png)
+
+<!--
+GPU Worker ghi mọi lần huấn luyện vào đây. Kỹ sư ML so sánh accuracy và macro F1 trên validation và test với mô hình hiện tại, rồi mới quyết định phát hành. Các tag nối run với job, phiên bản dữ liệu và mã nguồn. Mô hình được đăng ký là phiên bản 3; phát hành nó là bước tiếp theo, bằng một pull request.
+-->
+
+---
+
+# Quản trị viên: phát hành mô hình bằng một pull request
+
+![w:1160](assets/release/pr-release-diff-annotated.png)
+
+<!--
+Tệp phát hành ghi mô hình và phiên bản mà ứng dụng tải về. Kỹ sư ML đã so sánh v3 với v2 trong MLflow trước. Merge chạy workflow release: GPU Worker chuyển mô hình sang ONNX, kiểm tra ONNX và PyTorch cho cùng dự đoán trên ảnh validation, tải lên, rồi ghi lần phát hành kèm người merge và commit. Quay lại bản cũ: revert pull request. Nói thật: v3 chỉ ngang v2, vì 10 nhãn mới gần như không đổi các chỉ số.
+-->
+
+---
+
+<!-- _class: cards -->
+
+# Người dùng: ứng dụng nhận mô hình mới
+
+![w:1160](assets/release/app-update-strip.png)
+
+- 1 · Đang dùng phiên bản 2
+- 2 · Ứng dụng thấy bản phát hành mới
+- 3 · Tải mô hình ONNX về máy, kiểm tra sha256
+
+<!--
+Ứng dụng kiểm tra các mô hình đã phát hành khi mở. Người dùng chọn cập nhật. Mô hình được tải về và kiểm tra trên điện thoại, sau đó chẩn đoán chạy ngay trên máy, không cần mạng. Slide sau: chụp lại cùng chiếc lá với mô hình mới.
+-->
