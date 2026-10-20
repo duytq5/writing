@@ -185,6 +185,20 @@ Tỉ lệ lớp trên slide là minh hoạ.
 
 ---
 
+# Giả lập: giấu nhãn rồi mở dần
+
+![w:1160](diagrams/al-setup.svg)
+
+<!--
+Bộ dữ liệu đã có nhãn đầy đủ, nên giả lập che nhãn của kho ảnh rồi mở dần, thay cho việc hỏi chuyên gia (pool-based, theo Karamcheti và cộng sự, ACL 2021).
+Chia RoCoLe 1.481 ảnh: test 213 (14,4%), validation 184 (12,4%), seed set 107 ảnh (khoảng 10% pool) có nhãn từ đầu, còn 977 ảnh che nhãn. Sầu riêng 2.595 ảnh chia cùng cách (test 15,2%, validation 12,1%, seed 7,3%).
+Mỗi vòng huấn luyện mô hình mới từ trọng số ImageNet trên toàn bộ ảnh đã có nhãn, đo trên test cố định, rồi chiến lược chọn N ảnh để mở nhãn. 7 vòng huấn luyện, 6 lần chọn.
+Chỉ số: macro-F1, recall lớp nhện đỏ (red spider mite), AUBC (diện tích dưới đường macro-F1 theo số nhãn) và số nhãn cần để đạt ngưỡng (macro-F1 ≥ 0,80, recall lớp hiếm ≥ 0,70).
+Mốc trần (ceiling): huấn luyện một lần trên toàn bộ kho ảnh có nhãn. 5 chiến lược × 5 seed × 2 bộ dữ liệu.
+-->
+
+---
+
 <!-- _class: part -->
 <!-- _paginate: false -->
 
