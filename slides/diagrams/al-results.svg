@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 540" width="1160" height="540" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<rect x="0" y="0" width="560" height="420" rx="14" fill="#fafbfc" stroke="#9aa5b1" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="14" y="30" text-anchor="start" font-size="22" font-weight="bold" fill="#52606d">RoCoLe: lớp lệch, nhện đỏ hiếm</text>
+<rect x="600" y="0" width="560" height="420" rx="14" fill="#fafbfc" stroke="#9aa5b1" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="614" y="30" text-anchor="start" font-size="22" font-weight="bold" fill="#52606d">Sầu riêng: lớp khá cân bằng</text>
+<text x="20" y="72" text-anchor="start" font-size="20" fill="#52606d">Số lần chạy nhận đúng ≥ 70% ảnh nhện đỏ</text>
+<text x="20" y="136" text-anchor="start" font-size="22" font-weight="bold" fill="#cf222e">Random</text>
+<circle cx="250" cy="128" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="290" cy="128" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="330" cy="128" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="370" cy="128" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="410" cy="128" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<text x="470" y="136" text-anchor="start" font-size="22" font-weight="bold" fill="#cf222e">0/5</text>
+<text x="20" y="182" text-anchor="start" font-size="22" fill="#1f2933">Least confidence</text>
+<circle cx="250" cy="174" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="290" cy="174" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="330" cy="174" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="370" cy="174" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="410" cy="174" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<text x="470" y="182" text-anchor="start" font-size="22" fill="#1f2933">1/5</text>
+<text x="20" y="228" text-anchor="start" font-size="22" fill="#1f2933">Margin</text>
+<circle cx="250" cy="220" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="290" cy="220" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="330" cy="220" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="370" cy="220" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="410" cy="220" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<text x="470" y="228" text-anchor="start" font-size="22" fill="#1f2933">1/5</text>
+<text x="20" y="274" text-anchor="start" font-size="22" font-weight="bold" fill="#1e5631">Entropy</text>
+<circle cx="250" cy="266" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="290" cy="266" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="330" cy="266" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="370" cy="266" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="410" cy="266" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<text x="470" y="274" text-anchor="start" font-size="22" font-weight="bold" fill="#1e5631">2/5</text>
+<text x="20" y="320" text-anchor="start" font-size="22" font-weight="bold" fill="#1e5631">Class-balanced</text>
+<circle cx="250" cy="312" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="290" cy="312" r="14" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<circle cx="330" cy="312" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="370" cy="312" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<circle cx="410" cy="312" r="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<text x="470" y="320" text-anchor="start" font-size="22" font-weight="bold" fill="#1e5631">2/5</text>
+<text x="20" y="400" text-anchor="start" font-size="20" fill="#52606d">Điểm chung các lớp gần nhau: 0,738 đến 0,768</text>
+<text x="620" y="72" text-anchor="start" font-size="20" fill="#52606d">Điểm chung các lớp, trung bình 5 lần chạy</text>
+<text x="620" y="136" text-anchor="start" font-size="22" font-weight="bold" fill="#cf222e">Random</text>
+<line x1="866.5" y1="128" x2="944.0" y2="128" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="905.3" cy="128" r="9" fill="#cf222e"/>
+<text x="620" y="182" text-anchor="start" font-size="22" fill="#1f2933">Least confidence</text>
+<line x1="954.9" y1="174" x2="1021.5" y2="174" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="988.2" cy="174" r="9" fill="#1e5631"/>
+<text x="620" y="228" text-anchor="start" font-size="22" fill="#1f2933">Margin</text>
+<line x1="980.4" y1="220" x2="1005.2" y2="220" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="992.8" cy="220" r="9" fill="#1e5631"/>
+<text x="620" y="274" text-anchor="start" font-size="22" fill="#1f2933">Entropy</text>
+<line x1="969.6" y1="266" x2="1025.4" y2="266" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="997.5" cy="266" r="9" fill="#1e5631"/>
+<text x="620" y="320" text-anchor="start" font-size="22" fill="#1f2933">Class-balanced</text>
+<line x1="972.7" y1="312" x2="1019.2" y2="312" stroke="#9aa5b1" stroke-width="4" stroke-linecap="round"/>
+<circle cx="995.9" cy="312" r="9" fill="#1e5631"/>
+<line x1="1075.7" y1="102" x2="1075.7" y2="334" stroke="#52606d" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1076" y="96" text-anchor="middle" font-size="18" fill="#52606d">gán hết: 0,953</text>
+<line x1="820.0" y1="334" x2="820.0" y2="340" stroke="#52606d" stroke-width="2"/>
+<text x="820" y="362" text-anchor="middle" font-size="18" fill="#52606d">0,92</text>
+<line x1="975.0" y1="334" x2="975.0" y2="340" stroke="#52606d" stroke-width="2"/>
+<text x="975" y="362" text-anchor="middle" font-size="18" fill="#52606d">0,94</text>
+<line x1="1130.0" y1="334" x2="1130.0" y2="340" stroke="#52606d" stroke-width="2"/>
+<text x="1130" y="362" text-anchor="middle" font-size="18" fill="#52606d">0,96</text>
+<line x1="820" y1="334" x2="1130" y2="334" stroke="#52606d" stroke-width="2"/>
+<text x="620" y="400" text-anchor="start" font-size="20" fill="#52606d">Hơn Random khoảng 0,011, ở cả 5 lần chạy</text>
+<rect x="0" y="446" width="1160" height="90" rx="8" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<text x="580" y="486" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Lớp lệch: chọn ảnh giúp bắt được bệnh hiếm.</text>
+<text x="580" y="512" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Lớp cân bằng: lợi ít nhưng đều.</text>
+</svg>
+

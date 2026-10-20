@@ -199,6 +199,20 @@ Mốc trần (ceiling): huấn luyện một lần trên toàn bộ kho ảnh c�
 
 ---
 
+# Kết quả: tùy bộ dữ liệu
+
+![w:1160](diagrams/al-results.svg)
+
+<!--
+RoCoLe (lệch lớp): số seed đạt recall lớp nhện đỏ ≥ 0,70 trong 700 nhãn mở thêm. Random 0/5; least confidence và margin 1/5; entropy và class-balanced 2/5.
+AUBC macro-F1 trung bình 5 seed: class-balanced 0,768, least confidence 0,762, margin 0,754, entropy 0,744, random 0,738, trần 0,814. Mọi chiến lược nhỉnh hơn random nhưng chênh lệch nằm trong một độ lệch chuẩn (0,035 đến 0,090).
+RoCoLe nhiễu: entropy seed 44 lệch hẳn (F1 0,59, recall 0,19), và ở seed 42 trần còn thấp hơn bốn chiến lược.
+Sầu riêng (khá cân bằng): random 0,931, bốn chiến lược còn lại 0,942 đến 0,943, độ lệch chuẩn 0,002 đến 0,005; chiến lược nào cũng hơn random ở cả 5 seed. Trần 0,953.
+Đúng như các bài báo: tác dụng của học chủ động tùy vào bộ dữ liệu, nhất là mức lệch lớp.
+-->
+
+---
+
 <!-- _class: part -->
 <!-- _paginate: false -->
 

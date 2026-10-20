@@ -7,7 +7,7 @@ Phải: hai chỉ số đo và số lần chạy. SVG đặt trên slide ở t�
 """
 from svgkit import Canvas, INK, MUTED, FAINT, STYLE
 
-W, H = 1160, 470
+W, H = 1160, 552
 c = Canvas(W, H)
 
 # Cột trái: thanh chồng, chiều cao tỉ lệ số ảnh.
@@ -55,5 +55,9 @@ c.box("rare", X3, T + 110, W3, BOXH, ["Bắt đúng lớp hiếm", "(recall nh�
 c.arrow(("eval", "r"), ("f1", "l"))
 c.arrow((R + BOXW + 20, T + BOXH / 2), [(R + BOXW + 20, T + 110 + BOXH / 2), ("rare", "l")])
 c.box("runs", X3, B + 90, W3, 100, ["5 chiến lược × 5 lần chạy", "RoCoLe và sầu riêng"], cls="key")
+
+# Dải dưới: trả lời câu hỏi "sao đã có sẵn nhãn?".
+c.box("why", 10, 474, 1146, 76, ["Vì sao đã có nhãn? Hai bộ dữ liệu đã được gán nhãn đủ từ trước.",
+                                 "Giấu nhãn đi thì thử được nhiều chiến lược, nhiều lần, mà không cần chuyên gia."], cls="lab")
 
 print(c.svg())
