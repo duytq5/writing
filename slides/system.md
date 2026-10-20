@@ -144,7 +144,19 @@ Chọn ngẫu nhiên thì dễ phí nhãn vào ảnh mô hình đã biết. Câu
 <!--
 Học chủ động (Active Learning): thay vì chọn ngẫu nhiên, để mô hình chọn ảnh nào đáng gán nhãn nhất.
 Vòng lặp: mô hình chấm điểm mọi ảnh chưa nhãn, chọn 10 ảnh "phù hợp" nhất theo một chiến lược, chuyên gia gán nhãn, huấn luyện lại, rồi lặp lại.
-"Phù hợp" tùy chiến lược: ảnh mô hình kém chắc nhất, hoặc ảnh có thể thuộc lớp hiếm. Slide sau nói rõ.
+"Phù hợp" tùy chiến lược: ảnh mô hình kém chắc nhất, hoặc ảnh có thể thuộc lớp hiếm. Hai slide chiến lược phía sau nói rõ.
+-->
+
+---
+
+# Vì sao cần giả lập?
+
+![w:1160](diagrams/al-why.svg)
+
+<!--
+Học chủ động không cho cùng một kết quả trên mọi bộ dữ liệu. Werner và cộng sự (2024) so sánh nhiều miền dữ liệu và thấy chiến lược tốt nhất đổi theo từng bộ. Lüth và cộng sự (2023) chỉ ra phân bố lớp quyết định học chủ động giúp được bao nhiêu, và lợi ích lớn nhất khi dữ liệu lệch lớp. Hacohen và cộng sự (2022) cho thấy lúc ít nhãn và lúc nhiều nhãn cần hai cách chọn ngược nhau.
+Hai bài khác cũng nói kết quả còn tranh luận: Gashi và cộng sự (2024, "Deep Active Learning: A Reality Check") thấy entropy là mốc khó vượt, có cách phức tạp còn thua random; Mittal và cộng sự (2025, IJCV) thấy khi có tăng cường dữ liệu mạnh, chọn chủ động gần bằng random.
+Vì vậy cần thực nghiệm trên chính bộ dữ liệu: RoCoLe (lệch lớp, nhện đỏ hiếm) và sầu riêng (khá cân bằng).
 -->
 
 ---

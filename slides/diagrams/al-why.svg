@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 552" width="1160" height="552" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<path d="M981,316 L660,372" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M581,316 L580,372" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M181,316 L500,372" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="1" y="0" width="358" height="312" rx="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<path d="M23,22 h36 l14,14 v46 h-50 Z" fill="#fff8c5" stroke="#bf8700" stroke-width="2.5"/><path d="M59,22 v14 h14" fill="none" stroke="#bf8700" stroke-width="2.5"/>
+<line x1="32" y1="52" x2="64" y2="52" stroke="#bf8700" stroke-width="2"/>
+<line x1="32" y1="63" x2="64" y2="63" stroke="#bf8700" stroke-width="2"/>
+<line x1="32" y1="74" x2="64" y2="74" stroke="#bf8700" stroke-width="2"/>
+<text x="89" y="46" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Werner và cộng sự, 2024</text>
+<text x="89" y="72" text-anchor="start" font-size="20" fill="#52606d">NeurIPS [1]</text>
+<text x="181" y="142" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">“The superiority of methods</text>
+<text x="181" y="170" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">is strongly dataset- and</text>
+<text x="181" y="198" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">domain-dependent …”</text>
+<line x1="41" y1="232" x2="319" y2="232" stroke="#9aa5b1" stroke-width="1.5"/>
+<text x="181" y="260" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">Chiến lược tốt nhất</text>
+<text x="181" y="286" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">đổi theo từng bộ dữ liệu</text>
+<rect x="401" y="0" width="358" height="312" rx="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<path d="M423,22 h36 l14,14 v46 h-50 Z" fill="#fff8c5" stroke="#bf8700" stroke-width="2.5"/><path d="M459,22 v14 h14" fill="none" stroke="#bf8700" stroke-width="2.5"/>
+<line x1="432" y1="52" x2="464" y2="52" stroke="#bf8700" stroke-width="2"/>
+<line x1="432" y1="63" x2="464" y2="63" stroke="#bf8700" stroke-width="2"/>
+<line x1="432" y1="74" x2="464" y2="74" stroke="#bf8700" stroke-width="2"/>
+<text x="489" y="46" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Lüth và cộng sự, 2023</text>
+<text x="489" y="72" text-anchor="start" font-size="20" fill="#52606d">NeurIPS [2]</text>
+<text x="581" y="128" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">“… class distribution is a crucial</text>
+<text x="581" y="156" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">predictor for the potential</text>
+<text x="581" y="184" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">performance gains of AL</text>
+<text x="581" y="212" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">on a dataset”</text>
+<line x1="441" y1="232" x2="719" y2="232" stroke="#9aa5b1" stroke-width="1.5"/>
+<text x="581" y="260" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">Mức lệch lớp quyết định</text>
+<text x="581" y="286" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">học chủ động giúp bao nhiêu</text>
+<rect x="801" y="0" width="358" height="312" rx="14" fill="#ffffff" stroke="#9aa5b1" stroke-width="2"/>
+<path d="M823,22 h36 l14,14 v46 h-50 Z" fill="#fff8c5" stroke="#bf8700" stroke-width="2.5"/><path d="M859,22 v14 h14" fill="none" stroke="#bf8700" stroke-width="2.5"/>
+<line x1="832" y1="52" x2="864" y2="52" stroke="#bf8700" stroke-width="2"/>
+<line x1="832" y1="63" x2="864" y2="63" stroke="#bf8700" stroke-width="2"/>
+<line x1="832" y1="74" x2="864" y2="74" stroke="#bf8700" stroke-width="2"/>
+<text x="889" y="46" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Hacohen và cộng sự, 2022</text>
+<text x="889" y="72" text-anchor="start" font-size="20" fill="#52606d">ICML [3]</text>
+<text x="981" y="156" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">“Opposite Strategies Suit</text>
+<text x="981" y="184" text-anchor="middle" font-size="21" font-style="italic" fill="#1f2933">High and Low Budgets”</text>
+<line x1="841" y1="232" x2="1119" y2="232" stroke="#9aa5b1" stroke-width="1.5"/>
+<text x="981" y="260" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">Ít nhãn và nhiều nhãn</text>
+<text x="981" y="286" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">cần hai cách chọn ngược nhau</text>
+<rect x="80" y="374" width="1000" height="96" rx="8" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<text x="580" y="416" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Cần thực nghiệm để đưa ra chiến thuật chọn ảnh</text>
+<text x="580" y="444" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">phù hợp với thực trạng của từng dataset</text>
+<text x="0" y="502" text-anchor="start" font-size="16" fill="#52606d">[1] T. Werner, J. Burchert, M. Stubbemann, L. Schmidt-Thieme, “A Cross-Domain Benchmark for Active Learning,” NeurIPS 2024.</text>
+<text x="0" y="524" text-anchor="start" font-size="16" fill="#52606d">[2] C. T. Lüth, T. J. Bungert, L. Klein, P. F. Jaeger, “Navigating the Pitfalls of Active Learning Evaluation,” NeurIPS 2023.</text>
+<text x="0" y="546" text-anchor="start" font-size="16" fill="#52606d">[3] G. Hacohen, A. Dekel, D. Weinshall, “Active Learning on a Budget: Opposite Strategies Suit High and Low Budgets,” ICML 2022.</text>
+</svg>
