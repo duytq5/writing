@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 470" width="1160" height="470" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<defs></defs>
+<path d="M830,78 L900,78" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<text x="250" y="30" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Ngẫu nhiên (random)</text>
+<rect x="22.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="78.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="134.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="190.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="246.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="302.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="358.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="414.0" y="64.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="22.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="78.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="134.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="190.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="246.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="302.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="358.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="414.0" y="120.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="22.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="78.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="134.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="190.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="246.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="302.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="358.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="414.0" y="176.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="22.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="78.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="134.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="190.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="246.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="302.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="358.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="414.0" y="232.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="22.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="78.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="134.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="190.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<rect x="246.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="302.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="358.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#2f7d4f"/>
+<rect x="414.0" y="288.0" width="48.0" height="48.0" rx="6" fill="#e4e7eb"/>
+<text x="250" y="380" text-anchor="middle" font-size="22" fill="#1f2933">bốc 10 ảnh bất kỳ</text>
+<text x="250" y="414" text-anchor="middle" font-size="20" fill="#52606d">không cần mô hình: mốc so sánh</text>
+<line x1="540" y1="10" x2="540" y2="440" stroke="#9aa5b1" stroke-width="1.5"/>
+<text x="860" y="30" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Cân bằng lớp (class-balanced)</text>
+<text x="730" y="84" text-anchor="middle" font-size="20" fill="#52606d">nhãn đã có</text>
+<text x="980" y="84" text-anchor="middle" font-size="20" fill="#52606d">trọng số</text>
+<text x="640" y="140" text-anchor="end" font-size="22" fill="#1f2933">khỏe</text>
+<rect x="660.0" y="118.0" width="165.0" height="30.0" rx="4" fill="#cbd2d9"/>
+<rect x="920.0" y="118.0" width="25.5" height="30.0" rx="4" fill="#2f7d4f"/>
+<text x="640" y="210" text-anchor="end" font-size="22" fill="#1f2933">gỉ sắt</text>
+<rect x="660.0" y="188.0" width="105.0" height="30.0" rx="4" fill="#cbd2d9"/>
+<rect x="920.0" y="188.0" width="40.0" height="30.0" rx="4" fill="#2f7d4f"/>
+<text x="640" y="280" text-anchor="end" font-size="22" fill="#1f2933">nhện đỏ</text>
+<rect x="660.0" y="258.0" width="30.0" height="30.0" rx="4" fill="#cbd2d9"/>
+<rect x="920.0" y="258.0" width="140.0" height="30.0" rx="4" fill="#1e5631"/>
+<text x="860" y="380" text-anchor="middle" font-size="22" fill="#1f2933">ưu tiên ảnh có thể thuộc lớp hiếm</text>
+<text x="860" y="414" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">điểm = entropy × trọng số lớp</text>
+</svg>

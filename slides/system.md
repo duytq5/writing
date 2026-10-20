@@ -46,10 +46,146 @@ style: |
   section.part p { color: var(--brand-soft); font-size: var(--lead); }
 ---
 
+# Nội dung
+
+- I. Giới thiệu
+- II. Đánh giá mô hình thị giác máy tính
+- III. Mô phỏng học chủ động
+- IV. Nền tảng MLOps
+- V. Hướng phát triển
+
+---
+
 <!-- _class: part -->
 <!-- _paginate: false -->
 
-# Phần 1. Vì sao cần hệ thống
+# Phần I. Giới thiệu
+
+Bệnh trên lá và chẩn đoán trên điện thoại
+
+<!--
+Tài liệu: writing/chapters/01-intro.md (mục 1.1 Đặt vấn đề, 1.2 Mục tiêu, 1.3 Phạm vi).
+-->
+
+
+---
+
+# Bệnh trên lá: mất mùa mỗi năm
+
+![w:1160](assets/intro/problem.png)
+
+<!--
+Sâu bệnh làm mất 10–40% sản lượng nông nghiệp trước thu hoạch, khoảng 220 tỷ USD mỗi năm (CABI). Ở Việt Nam: gỉ sắt làm năng suất cà phê giảm 16–34%; cháy lá làm sản lượng sầu riêng ở Cai Lậy giảm hơn 30%, từ 20 tấn còn 13–14 tấn. Nông dân vẫn phát hiện bằng mắt, khi bệnh đã lan. Nguồn: chapters/01-intro.md, mục 1.1.
+-->
+
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# Phần II. Đánh giá mô hình thị giác máy tính
+
+Đang soạn
+
+<!--
+Tài liệu: repo thesis/, giai đoạn 2: so sánh 10 kiến trúc, chọn FastViT-T8 (reports/, papers/).
+-->
+
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# Phần III. Mô phỏng học chủ động
+
+Gán nhãn ảnh nào trước khi chuyên gia có hạn?
+
+---
+
+# Vấn đề: ít ảnh lá thực địa có nhãn
+
+![w:1160](diagrams/al-problem.svg)
+
+<!--
+Ảnh lá ngoài vườn khác ảnh phòng thí nghiệm: nền rối, ánh sáng thay đổi, lá che nhau. Mô hình học trên ảnh nền trơn chẩn đoán kém ngoài thực địa.
+Bộ thực địa thì rất nhỏ: sầu riêng (dữ liệu Việt Nam) 2.595 ảnh, RoCoLe 1.560 ảnh, so với 54.306 ảnh của PlantVillage. Gán thêm nhãn cần chuyên gia nông nghiệp, nên tốn kém.
+Nguồn: PlantVillage (Hughes & Salathé, 2015); RoCoLe (Parraga-Alava et al., 2019).
+-->
+
+---
+
+# Cơ hội và khó khăn
+
+![w:1160](diagrams/al-challenge.svg)
+
+<!--
+Cơ hội: người dùng ứng dụng chụp ảnh lá ngoài vườn mỗi ngày. Đó chính là ảnh thực địa ta đang thiếu.
+Khó khăn: muốn dùng được thì ảnh phải có nhãn, mà nhãn cần chuyên gia nông nghiệp. Chuyên gia ít và đắt; ảnh gửi về nhiều ảnh mờ, tối, không phải lá; và số ảnh vượt xa số ảnh chuyên gia gán kịp.
+Vì vậy không thể gán hết: phải chọn ra một phần nhỏ đáng gán nhất.
+-->
+
+---
+
+# Câu hỏi
+
+![w:1160](diagrams/al-question.svg)
+
+<!--
+Chuyên gia chỉ gán được một ít ảnh mỗi lần, ví dụ 10 ảnh. Trong pool có hàng trăm ảnh chưa nhãn.
+Chọn ngẫu nhiên thì dễ phí nhãn vào ảnh mô hình đã biết. Câu hỏi là: chọn 10 ảnh nào để mô hình học được nhiều nhất?
+-->
+
+---
+
+# Học chủ động: để mô hình chọn ảnh cần gán
+
+![w:1160](diagrams/al-pick.svg)
+
+<!--
+Học chủ động (Active Learning): thay vì chọn ngẫu nhiên, để mô hình chọn ảnh nào đáng gán nhãn nhất.
+Vòng lặp: mô hình chấm điểm mọi ảnh chưa nhãn, chọn 10 ảnh "phù hợp" nhất theo một chiến lược, chuyên gia gán nhãn, huấn luyện lại, rồi lặp lại.
+"Phù hợp" tùy chiến lược: ảnh mô hình kém chắc nhất, hoặc ảnh có thể thuộc lớp hiếm. Slide sau nói rõ.
+-->
+
+---
+
+# Chiến lược bất định: chọn ảnh mô hình phân vân
+
+![w:1160](diagrams/al-uncertainty.svg)
+
+<!--
+Ba chiến lược bất định (uncertainty sampling) dùng cùng một lần suy luận trên pool, chỉ khác cách tính điểm từ vector xác suất.
+Least confidence: 1 trừ xác suất cao nhất. Margin: khoảng cách giữa hai xác suất đầu, càng nhỏ càng phân vân. Entropy: độ dàn đều của cả phân phối.
+Điểm số trên slide là ví dụ minh hoạ.
+-->
+
+---
+
+# Mốc so sánh và lớp hiếm
+
+![w:1160](diagrams/al-balance.svg)
+
+<!--
+Random: chọn ngẫu nhiên, không cần mô hình. Đây là mốc để biết các chiến lược khác có đáng dùng không.
+Class-balanced: điểm entropy nhân với trọng số nghịch với tần suất lớp trong tập đã gán nhãn, freq(y) = (n_y + 1) / (N + C). Lớp càng ít nhãn (nhện đỏ) thì ảnh có khả năng thuộc lớp đó càng được ưu tiên.
+Tỉ lệ lớp trên slide là minh hoạ.
+-->
+
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# Phần IV. Nền tảng MLOps
+
+Nhu cầu, giải pháp và demo
+
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# IV.1 Vì sao cần hệ thống
 
 Từ thí nghiệm học chủ động đến một nền tảng chạy thật
 
@@ -96,7 +232,7 @@ Từ thí nghiệm học chủ động đến một nền tảng chạy thật
 <!-- _class: part -->
 <!-- _paginate: false -->
 
-# Phần 2. Giải pháp
+# IV.2 Giải pháp
 
 Từ nhu cầu đến thiết kế hệ thống
 
@@ -235,7 +371,7 @@ Hai job chạy độc lập. Job gán nhãn: hệ thống chụp lại dữ li�
 <!-- _class: part -->
 <!-- _paginate: false -->
 
-# Phần 3. Demo
+# IV.3 Demo
 
 Một ảnh lá cà phê mới, chưa có trong tập dữ liệu
 
@@ -398,4 +534,17 @@ Tệp phát hành ghi mô hình và phiên bản mà ứng dụng tải về. K�
 
 <!--
 Ứng dụng kiểm tra các mô hình đã phát hành khi mở. Người dùng chọn cập nhật. Mô hình được tải về và kiểm tra trên điện thoại, sau đó chẩn đoán chạy ngay trên máy, không cần mạng. Slide sau: chụp lại cùng chiếc lá với mô hình mới.
+-->
+
+---
+
+<!-- _class: part -->
+<!-- _paginate: false -->
+
+# Phần V. Hướng phát triển
+
+Đang soạn
+
+<!--
+Ý chính từ demo: gán nhãn không hiện gợi ý của mô hình (tránh thiên lệch); mỗi chuyên gia chỉ thấy một ảnh một lúc; job gán nhãn chỉ trên ảnh từ ứng dụng, dùng lại dự đoán của điện thoại; worker không cần SSM tunnel và khoá IAM dài hạn; 10 nhãn mới gần như không đổi chỉ số của v3.
 -->

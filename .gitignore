@@ -12,3 +12,8 @@ build/
 *~
 .vscode/
 .idea/
+
+# Slide exports and Office lock files
+slides/system.pdf
+slides/*.pptx
+~$*
