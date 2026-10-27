@@ -240,6 +240,22 @@ Khoảng tin cậy 95% tính bằng bootstrap 2.000 lần trên tập kiểm th�
 
 ---
 
+# Chỉ số đánh giá: macro-F1
+
+<!-- _footer: "[42] M. Sokolova và G. Lapalme, “A systematic analysis of performance measures for classification tasks”, Information Processing & Management, vol 45, số p.h 4, tr 427–437, 2009." -->
+
+![w:1160](diagrams/bench-metrics.svg)
+
+<!--
+Ví dụ thật: DeiT-Tiny trên 226 ảnh kiểm thử của RoCoLe. Hàng là nhãn thật, cột là mô hình dự đoán. Ô xanh là đoán đúng.
+Với mỗi lớp có ba con số. Precision: trong các ảnh mô hình nói là lớp đó, bao nhiêu ảnh đúng. Recall: trong các ảnh thật của lớp đó, mô hình tìm ra bao nhiêu. F1 cân bằng hai số này.
+Lớp nhện đỏ có 22 ảnh, mô hình chỉ đúng 12, phần lớn nhầm sang gỉ sắt, nên F1 chỉ 0,545.
+Accuracy là tỉ lệ ảnh đoán đúng: 0,898. Con số này cao vì lá khoẻ chiếm nhiều ảnh và gần như đúng hết, nên nó che lỗi của lớp hiếm.
+Macro-F1 lấy trung bình F1 của ba lớp, mỗi lớp nặng như nhau, nên lớp nhện đỏ kéo điểm xuống còn 0,800. Vì bộ RoCoLe lệch lớp, luận văn dùng macro-F1 làm chỉ số chính.
+-->
+
+---
+
 # Kết quả: macro-F1 trên tập kiểm thử
 
 | Mô hình | Họ | RoCoLe | KTC 95% | Sầu riêng | KTC 95% |
@@ -528,358 +544,148 @@ Vì không có một chiến lược thắng ở mọi bộ dữ liệu, nền t
 
 # Phần IV. Nền tảng MLOps
 
-Nhu cầu, giải pháp và demo
-
----
-
-<!-- _class: part -->
-
-# IV.1 Vì sao cần hệ thống
-
-Từ thí nghiệm học chủ động đến một nền tảng chạy thật
-
----
-
-# Ai dùng hệ thống?
-
-![w:1160](diagrams/roles.svg)
-
----
-
-# Là một người dùng ứng dụng, tôi muốn…
-
-![w:847](diagrams/story-user.svg)
-
----
-
-# Là một người gán nhãn, tôi muốn…
-
-![w:752](diagrams/story-labeler.svg)
-
----
-
-# Là một kỹ sư học máy, tôi muốn…
-
-![w:813](diagrams/story-mle.svg)
-
----
-
-# Là một quản trị viên, tôi muốn…
-
-![w:775](diagrams/story-admin.svg)
-
----
-
-# Hành trình: từ ảnh chụp đến mô hình tốt hơn
-
-![w:1111](diagrams/journey.svg)
-
-![w:742](diagrams/legend.svg)
-
----
-
-<!-- _class: part -->
-
-# IV.2 Giải pháp
-
-Từ nhu cầu đến thiết kế hệ thống
-
----
-
-<!-- _class: matrix -->
-
-# Tổng quan giải pháp
-
-![w:1160](diagrams/overview.svg)
-
----
-
-# Kiến trúc tổng thể
-
-![w:1160](diagrams/architecture.svg)
-
----
-
-# Công cụ mã nguồn mở
-
-![w:1160](diagrams/tools.svg)
-
----
-
-<!-- _class: cards -->
-
-# Ứng dụng di động
-
-![w:1160](diagrams/comp-app.svg)
-
-- Mô hình chạy trên máy: chẩn đoán cả khi không có mạng
-- Không cần tài khoản để chẩn đoán, chỉ đăng nhập khi gửi ảnh
-- Mô hình mới tự tải về, không cần cập nhật ứng dụng
-
----
-
-# Đăng nhập và phân quyền
-
-![w:1160](diagrams/comp-auth.svg)
-
----
-
-<!-- _class: cards -->
-
-# Vận hành bằng pull request
-
-![w:1160](diagrams/comp-github.svg)
-
-- Lịch sử Git: ai chạy job nào, lúc nào
-- Phát hành mô hình cũng vậy: sửa một tệp, merge
-- Quay lại bản trước: revert pull request
+Theo chân một chiếc lá
 
 <!--
-Gán nhãn và huấn luyện là hai job riêng, mỗi job một tệp nhỏ. Job gán nhãn ghi tập dữ liệu, cách chọn ảnh và số ảnh. Job huấn luyện ghi tập dữ liệu, phiên bản dữ liệu và cách huấn luyện. Quản trị viên không mở trang quản trị nào: viết tệp, mở pull request, được duyệt và merge thì GitHub gọi AWS để chạy job. Phát hành mô hình làm giống hệt.
+Phần này có hai nửa. Nửa đầu kể hệ thống làm gì, theo chân một chiếc lá bị chẩn đoán sai. Nửa sau mở từng khối ra để thấy hệ thống được xây thế nào.
 -->
 
 ---
 
 <!-- _class: cards -->
 
-# Job gán nhãn và job huấn luyện
-
-![w:1160](diagrams/comp-orchestration.svg)
-
-- Job gán nhãn tạo phiên bản dữ liệu mới, job huấn luyện tạo mô hình mới
-- Chấm điểm dùng mô hình mới nhất, chọn ngẫu nhiên thì không cần mô hình
-- Mỗi tập dữ liệu chỉ có một job gán nhãn đang chạy
-
-<!--
-Hai job chạy độc lập. Job gán nhãn: hệ thống chụp lại dữ liệu, GPU Worker chấm điểm ảnh chưa có nhãn bằng mô hình mới nhất (chọn ngẫu nhiên thì bỏ qua bước này), hệ thống chọn k ảnh, chuyên gia gán nhãn trên Label Studio, hệ thống gộp nhãn thành phiên bản dữ liệu mới. Job huấn luyện: chụp lại một phiên bản dữ liệu, GPU Worker huấn luyện, hệ thống ghi mô hình. Có thể gán nhãn nhiều lần rồi mới huấn luyện.
--->
-
----
-
-<!-- _class: cards -->
-
-# GPU Worker
-
-![w:1160](diagrams/comp-worker.svg)
-
-- Máy không mở cổng nào, tự lấy việc từ hàng đợi
-- Máy tắt: job nằm chờ, chạy tiếp khi máy bật
-- Mỗi job chạy đúng image Docker của commit
-
----
-
-<!-- _class: cards -->
-
-# Gán nhãn
-
-![w:1160](diagrams/comp-labeling.svg)
-
-- Chuyên gia chỉ thấy ảnh của job gán nhãn
-- Có sẵn nhãn gợi ý, chỉ cần xác nhận hoặc sửa
-- Nhãn lưu ở Postgres, không chỉ trong Label Studio
-
----
-
-<!-- _class: cards -->
-
-# Theo dõi và phát hành mô hình
-
-![w:980](diagrams/comp-release.svg)
-
-- Mọi lần huấn luyện so sánh ở một chỗ
-- Lịch sử phát hành chỉ thêm, không sửa
-- Quay lại bản cũ bằng git revert
-
----
-
-<!-- _class: cards -->
-
-# Lưu trữ dữ liệu
-
-![w:1160](diagrams/comp-storage.svg)
-
-- Ảnh đặt tên theo SHA-256, không lưu trùng
-- Phiên bản dữ liệu không bao giờ bị sửa
-- Ổ dữ liệu riêng, sao lưu mỗi đêm
-
----
-
-<!-- _class: cards -->
-
-# Xem kho ảnh
-
-![w:1160](diagrams/comp-viewer.svg)
-
-- Xem ảnh đã gán nhãn, chưa gán nhãn và ảnh mới gửi về
-- Lọc theo lớp, tập, trạng thái, nguồn ảnh
-- Chỉ để xem, dữ liệu gốc không đổi
-
----
-
-<!-- _class: part -->
-
-# IV.3 Demo
-
-Một ảnh lá cà phê mới, chưa có trong tập dữ liệu
-
----
-
-<!-- _class: cards -->
-
-# Người dùng: đăng nhập và tải mô hình
-
-![w:1160](assets/demo/demo-tai-mo-hinh.png)
-
-- Đồng ý gửi ảnh
-- Đăng nhập bằng Google
-- Chọn mô hình
-- Tải về máy
-- Chọn model để thực hiện dự đoán
-
-<!--
-Phải đăng nhập mới tải được mô hình. Ứng dụng chỉ hiện các mô hình đã phát hành trên hệ thống. Mô hình tải về một lần, sau đó chẩn đoán ngay trên điện thoại.
--->
-
----
-
-<!-- _class: cards -->
-
-# Người dùng: chẩn đoán ảnh mới
+# Mô hình đoán sai một chiếc lá
 
 ![w:1160](assets/demo/demo-chan-doan.png)
 
-- Chọn ảnh một chiếc lá
-- Kết quả ngay trên máy: Red spider mite, 43%
-- Ảnh thật là gỉ sắt lá cà phê: mô hình đoán sai, ảnh được gửi về để gán nhãn
+- Người dùng chụp một chiếc lá cà phê
+- Ứng dụng trả lời ngay: nhện đỏ, 43%
+- Lá thật bị gỉ sắt: mô hình cần học thêm
 
 <!--
-Đây đúng là loại ảnh mà học chủ động cần: mô hình chưa chắc chắn. Ảnh nằm trong hàng đợi trên máy và tự gửi khi có mạng, sau đó vào kho ảnh chưa gán nhãn.
+Đây là ảnh thật từ buổi demo. Mô hình trên điện thoại chẩn đoán nhện đỏ với độ tin cậy chỉ 43%, trong khi lá bị gỉ sắt. Một mô hình huấn luyện một lần sẽ mãi sai với những ảnh như thế này.
+Câu hỏi của phần này: làm sao để chiếc lá này quay lại giúp mô hình tốt hơn?
 -->
 
 ---
 
-# Xem kho ảnh trong FiftyOne
+# Bốn khối, ba người
 
-![h:560](assets/fiftyone/fiftyone-grid.png)
+![w:1160](diagrams/p4s-overview.svg)
 
 <!--
-Ảnh vừa gửi từ ứng dụng nằm đầu danh sách, kèm dự đoán của ứng dụng.
+Hệ thống có bốn khối nối thành một vòng. Ứng dụng chẩn đoán và gửi ảnh về. Kho ảnh giữ mọi ảnh gửi về, lúc đầu chưa có nhãn. Gán nhãn: chuyên gia gán nhãn cho những ảnh được chọn. Huấn luyện và phát hành: kỹ sư huấn luyện mô hình mới rồi gửi về điện thoại.
+Ba người, mỗi người chỉ làm một việc: người dùng chụp lá, chuyên gia gán nhãn, kỹ sư mở job bằng pull request.
 -->
 
 ---
 
-# Xem kho ảnh trong FiftyOne: các trường chính
+# Ứng dụng: chẩn đoán ngay trên điện thoại
 
-![w:1160](assets/fiftyone/fiftyone-grid-annotated.png)
+![w:1160](diagrams/p4s-strip-1.svg)
+
+![w:1160](assets/demo/demo-tai-mo-hinh.png)
 
 <!--
-Lọc theo source = edge để xem ảnh từ ứng dụng, status = unlabeled để xem ảnh chưa gán nhãn. ground_truth là nhãn do chuyên gia gán. labeled_by cho biết ai gán, label_round cho biết gán ở vòng nào.
+Người dùng đăng nhập bằng Google, chọn mô hình và tải về máy một lần. Từ đó ứng dụng chẩn đoán ngay trên điện thoại, không cần mạng.
+Mỗi ảnh chụp được gửi về hệ thống cùng kết quả chẩn đoán, như chiếc lá bị đoán sai ở slide trước.
 -->
 
 ---
 
-# Quản trị viên: mở job gán nhãn bằng một pull request
+# Kho ảnh: mọi ảnh gửi về nằm một chỗ
 
-![w:1160](assets/operator/pr-round-diff.png)
+![w:1160](diagrams/p4s-strip-2.svg)
+
+![h:470](assets/fiftyone/fiftyone-grid-annotated.png)
 
 <!--
-Quản trị viên không tự chọn ảnh. Một tệp mới trong configs/rounds/ ghi tập dữ liệu, mô hình chấm điểm, cách chọn (entropy), k = 10 và seed. CI kiểm tra tệp trước khi merge. Duyệt và merge trên GitHub là bước phê duyệt và là lịch sử.
+Ảnh gửi về vào kho với trạng thái chưa có nhãn. Kỹ sư xem kho ảnh trong FiftyOne: lọc theo nguồn để thấy ảnh từ ứng dụng, lọc theo trạng thái để thấy ảnh chưa gán nhãn.
+Chiếc lá của chúng ta đang nằm ở đây, chờ một job gán nhãn chọn tới.
 -->
 
 ---
 
-# Merge xong: GitHub Actions khởi động job
+# Gán nhãn: chuyên gia chỉ gán ảnh được chọn
 
-![w:1160](assets/operator/start-round-runs-annotated.png)
+![w:1160](diagrams/p4s-strip-3.svg)
+
+![h:470](assets/labelstudio/labeling-annotated.png)
 
 <!--
-Merge vào main chạy workflow start-round. Workflow kiểm tra tệp, ghi job cùng người merge và commit, rồi khởi động job trong 25 giây. Job chấm điểm các ảnh, chọn 10 ảnh và mở project Label Studio ở slide sau.
+Kỹ sư mở một job gán nhãn: chọn chiến lược và số ảnh k. Hệ thống chấm điểm mọi ảnh chưa có nhãn và chọn k ảnh, đúng như phần giả lập học chủ động.
+Chuyên gia mở Label Studio, thấy dự đoán của mô hình chọn sẵn, chỉ cần xác nhận hoặc sửa. Khi đủ k ảnh, nhãn được gộp thành một phiên bản dữ liệu mới.
 -->
 
 ---
 
-# Label Studio: mỗi job gán nhãn là một project
+# Huấn luyện: so sánh mọi lần chạy
 
-![h:560](assets/operator/label-studio-projects.png)
+![w:1160](diagrams/p4s-strip-4.svg)
+
+![h:470](assets/training/mlflow-run-annotated.png)
 
 <!--
-Mỗi job gán nhãn tạo một project. Tên project là ACTIVE khi job còn chờ nhãn, và đổi thành DONE khi đủ nhãn. Chuyên gia mở project ACTIVE để bắt đầu.
+Kỹ sư mở một job huấn luyện trên phiên bản dữ liệu mới. GPU Worker huấn luyện và ghi kết quả vào MLflow.
+Kỹ sư so sánh macro-F1 trên tập đánh giá và tập kiểm thử với mô hình đang dùng, rồi mới quyết định phát hành.
 -->
 
 ---
 
-# Chuyên gia gán nhãn trong Label Studio
+# Phát hành: điện thoại nhận mô hình mới
 
-![h:560](assets/labelstudio/labeling.png)
-
-<!--
-Chuyên gia bấm Label All Tasks. Label Studio đưa từng ảnh một, mỗi ảnh cho một người.
--->
-
----
-
-# Gán nhãn: một ảnh, một nhãn
-
-![w:1160](assets/labelstudio/labeling-annotated.png)
-
-<!--
-Dự đoán của mô hình được chọn sẵn, chuyên gia chỉ cần xác nhận hoặc sửa. Submit lưu nhãn và hiện ảnh tiếp theo. Khi đủ 10 ảnh, job gộp nhãn thành một phiên bản dữ liệu mới.
--->
-
----
-
-# Kỹ sư ML: mở job huấn luyện bằng một pull request
-
-![w:1160](assets/training/pr-training-diff-annotated.png)
-
-<!--
-Kỹ sư ML không chạy huấn luyện bằng tay. Tệp ghi phiên bản dữ liệu, công thức và các tham số. CI kiểm tra tệp. Duyệt và merge trên GitHub là bước phê duyệt và là lịch sử. Sau khi merge, GitHub Actions khởi động job huấn luyện; GPU Worker huấn luyện và ghi lần chạy vào MLflow (slide sau).
--->
-
----
-
-# Merge xong: GitHub Actions khởi động job huấn luyện
-
-![w:1160](assets/training/start-training-runs-annotated.png)
-
-<!--
-CI kiểm tra tệp trên pull request, rồi chạy lại trên main sau khi merge. Merge vào main chạy start-training. Workflow từ chối tệp có phiên bản dữ liệu chưa tồn tại, nên tệp huấn luyện chỉ được merge sau khi job gán nhãn đã gộp nhãn. Sau đó workflow ghi job huấn luyện kèm người merge và commit, rồi khởi động job. GPU Worker huấn luyện và ghi lần chạy vào MLflow (slide sau).
--->
-
----
-
-# Kỹ sư ML: xem kết quả trong MLflow
-
-![w:1160](assets/training/mlflow-run-annotated.png)
-
-<!--
-GPU Worker ghi mọi lần huấn luyện vào đây. Kỹ sư ML so sánh accuracy và macro F1 trên validation và test với mô hình hiện tại, rồi mới quyết định phát hành. Các tag nối run với job, phiên bản dữ liệu và mã nguồn. Mô hình được đăng ký là phiên bản 3; phát hành nó là bước tiếp theo, bằng một pull request.
--->
-
----
-
-# Quản trị viên: phát hành mô hình bằng một pull request
-
-![w:1160](assets/release/pr-release-diff-annotated.png)
-
-<!--
-Tệp phát hành ghi mô hình và phiên bản mà ứng dụng tải về. Kỹ sư ML đã so sánh v3 với v2 trong MLflow trước. Merge chạy workflow release: GPU Worker chuyển mô hình sang ONNX, kiểm tra ONNX và PyTorch cho cùng dự đoán trên ảnh validation, tải lên, rồi ghi lần phát hành kèm người merge và commit. Quay lại bản cũ: revert pull request. Nói thật: v3 chỉ ngang v2, vì 10 nhãn mới gần như không đổi các chỉ số.
--->
-
----
-
-<!-- _class: cards -->
-
-# Người dùng: ứng dụng nhận mô hình mới
+![w:1160](diagrams/p4s-strip-4.svg)
 
 ![w:1160](assets/release/app-update-strip.png)
 
-- 1 · Đang dùng phiên bản 2
-- 2 · Ứng dụng thấy bản phát hành mới
-- 3 · Tải mô hình ONNX về máy, kiểm tra sha256
+<!--
+Kỹ sư phát hành mô hình bằng một pull request. Ứng dụng thấy bản phát hành mới, tải mô hình về, kiểm tra mã SHA-256 rồi dùng ngay.
+Vòng lặp khép lại: chiếc lá bị đoán sai đã thành dữ liệu cho mô hình mới. Nửa sau trả lời câu hỏi: hệ thống này được xây thế nào?
+-->
+
+---
+
+# Kiến trúc: bốn khối mở ra
+
+![w:1160](diagrams/p4s-arch.svg)
 
 <!--
-Ứng dụng kiểm tra các mô hình đã phát hành khi mở. Người dùng chọn cập nhật. Mô hình được tải về và kiểm tra trên điện thoại, sau đó chẩn đoán chạy ngay trên máy, không cần mạng. Slide sau: chụp lại cùng chiếc lá với mô hình mới.
+Cùng bốn khối, cùng màu, nhưng giờ là các thành phần thật, nhóm theo nơi chúng chạy.
+Điện thoại chạy ứng dụng Flutter với mô hình ONNX. AWS lưu trữ và điều phối: API Gateway với đăng nhập Cognito, Lambda, S3 cho ảnh và mô hình, Postgres cho nhãn và phiên bản dữ liệu, cùng ba công cụ web là FiftyOne, Label Studio và MLflow. GitHub giữ các tệp job. GPU Worker làm mọi việc nặng: chấm điểm, huấn luyện, xuất ONNX.
+Step Functions và SQS là phần điều phối: nối GitHub, AWS và GPU Worker thành từng job.
+-->
+
+---
+
+# Luồng 1: ảnh từ điện thoại vào kho
+
+![w:1000](diagrams/p4s-upload.svg)
+
+<!--
+Ứng dụng đăng nhập Google qua Cognito và gửi kết quả chẩn đoán tới API. API trả về một link ký sẵn. Ứng dụng gửi ảnh thẳng lên S3, ảnh không đi qua Lambda.
+Khi ảnh tới S3, một Lambda kiểm tra đó đúng là ảnh, xoá thông tin vị trí trong ảnh, rồi ghi vào Postgres với trạng thái chưa có nhãn.
+-->
+
+---
+
+# Luồng 2: một job gán nhãn
+
+![w:1000](diagrams/p4s-label.svg)
+
+<!--
+Kỹ sư viết một tệp job nhỏ: bộ dữ liệu, chiến lược, k. Pull request được duyệt và merge thì GitHub Actions đăng nhập AWS và khởi động job.
+Step Functions gửi việc chấm điểm qua hàng đợi SQS. GPU Worker tự lấy việc, chấm điểm mọi ảnh chưa có nhãn. Chiến lược chọn k ảnh và tạo một project trong Label Studio. Chuyên gia gán nhãn; mỗi nhãn được ghi ngay vào Postgres. Đủ k ảnh thì job ghi một phiên bản dữ liệu mới.
+-->
+
+---
+
+# Luồng 3: huấn luyện và phát hành
+
+![w:1000](diagrams/p4s-train.svg)
+
+<!--
+Job huấn luyện đi đúng đường đó: pull request, GitHub Actions, Step Functions, hàng đợi, GPU Worker. GPU Worker huấn luyện và ghi kết quả vào MLflow.
+Phát hành cũng là một pull request: GPU Worker xuất mô hình sang ONNX, kiểm tra ONNX cho kết quả giống PyTorch, rồi lưu lên S3. Hệ thống ghi một dòng phát hành mới. Ứng dụng hỏi API, thấy bản mới, tải về và kiểm tra SHA-256.
 -->
 
 ---

@@ -4,6 +4,7 @@
   python3 bench.py models > bench-models.svg      tám mô hình, ba họ
   python3 bench.py lpft > bench-lpft.svg          LP-FT và siêu tham số
   python3 bench.py tuning > bench-tuning.svg      vòng tinh chỉnh, ví dụ DeiT-Tiny
+  python3 bench.py metrics > bench-metrics.svg    chỉ số đánh giá trên ví dụ DeiT-Tiny
   python3 bench.py eval > bench-eval.svg          chia dữ liệu và đánh giá
   python3 bench.py choose > bench-choose.svg      độ chính xác và độ trễ
 
@@ -252,6 +253,59 @@ elif MODE == "eval":
     done(c)
 
 # ---------------------------------------------------------------- choose
+elif MODE == "metrics":
+    # DeiT-Tiny, tập kiểm thử RoCoLe (repeat 0, gộp 5 fold), hàng = nhãn thật, cột = dự đoán
+    # nguồn: research/benchmark-raw/data-and-results.md, mục Test confusion matrices
+    c = Canvas(1160, 486)
+    NAMES = ["Lá khoẻ", "Nhện đỏ", "Gỉ sắt"]
+    CM = [[119, 2, 2], [2, 12, 8], [1, 8, 72]]
+    n = sum(map(sum, CM))
+    X0, Y0, CW, CH = 120, 96, 104, 64
+    c.text(X0 + 1.5 * CW, 40, "Mô hình dự đoán", size=20, fill=MUTED)
+    c.text(0, Y0 - 16, "Nhãn thật", size=20, fill=MUTED, anchor="start")
+    for j, name in enumerate(NAMES):
+        c.text(X0 + j * CW + CW / 2, 76, name, size=18, bold=True)
+    for i, name in enumerate(NAMES):
+        y = Y0 + i * CH
+        c.text(X0 - 12, y + CH / 2 + 7, name, size=20, bold=True, anchor="end", fill=RED if i == 1 else INK)
+        for j in range(3):
+            fill = STYLE["sys"][0] if i == j else "#ffffff"
+            c.front.append(f'<rect x="{X0 + j * CW}" y="{y}" width="{CW}" height="{CH}" fill="{fill}" stroke="{FAINT}" stroke-width="1.5"/>')
+            c.text(X0 + j * CW + CW / 2, y + CH / 2 + 8, str(CM[i][j]), size=24, bold=i == j,
+                   fill=RED if (i == 1 and j != 1) else INK)
+    c.front.append(f'<rect x="{X0 - 2}" y="{Y0 + CH - 2}" width="{3 * CW + 4}" height="{CH + 4}" fill="none" stroke="{RED}" stroke-width="3"/>')
+    # bảng theo lớp
+    TX = [560, 760, 910, 1060]
+    for x, head, sub in [(TX[1], "Precision", ["đoán là lớp đó,", "đúng bao nhiêu"]),
+                         (TX[2] + 10, "Recall", ["ảnh thật của lớp,", "tìm ra bao nhiêu"]),
+                         (TX[3] + 20, "F1", ["cân bằng", "hai số"])]:
+        c.text(x, 24, head, bold=True)
+        for k, t in enumerate(sub):
+            c.text(x, 50 + k * 22, t, size=18, fill=MUTED)
+    f1s = []
+    for i, name in enumerate(NAMES):
+        tp = CM[i][i]
+        fp = sum(CM[k][i] for k in range(3)) - tp
+        fn = sum(CM[i]) - tp
+        pr, rc = tp / (tp + fp), tp / (tp + fn)
+        f1 = 2 * tp / (2 * tp + fp + fn)
+        f1s.append(f1)
+        y = Y0 + i * CH + CH / 2 + 8
+        col = RED if i == 1 else INK
+        c.text(TX[0], y, name, bold=True, anchor="start", fill=col)
+        c.text(TX[1], y, vn(pr), fill=col)
+        c.text(TX[2] + 10, y, vn(rc), fill=col)
+        c.text(TX[3] + 20, y, vn(f1), bold=True, fill=col)
+    c.front.append(f'<line x1="{TX[0]}" y1="{Y0}" x2="1160" y2="{Y0}" stroke="{FAINT}" stroke-width="1.5"/>')
+    macro = sum(f1s) / 3
+    acc = sum(CM[i][i] for i in range(3)) / n
+    assert abs(macro - .800) < .001 and abs(acc - .898) < .001
+    c.box("mf", 0, 330, 560, 96, [f"Macro-F1 = trung bình F1 ba lớp = {vn(macro)}"], cls="key", bold=True)
+    c.box("acc", 600, 330, 560, 96, [f"Accuracy = {sum(CM[i][i] for i in range(3))}/{n} ảnh đúng = {vn(acc)}"], cls="sys")
+    c.text(280, 464, "mỗi lớp nặng như nhau: lớp nhện đỏ kéo điểm xuống", size=19, fill=MUTED)
+    c.text(880, 464, "lá khoẻ nhiều ảnh nên che lỗi lớp nhện đỏ", size=19, fill=MUTED)
+    done(c)
+
 elif MODE == "choose":
     c = Canvas(1160, 500)
     X0, X1, Y0, Y1 = 90, 1120, 30, 400
