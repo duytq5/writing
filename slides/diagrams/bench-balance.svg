@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 500" width="1160" height="500" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<text x="290" y="30" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">RoCoLe: lệch</text>
+<path d="M290,250 L290.0,100.0 A150,150 0 1 1 283.4,399.9 Z" fill="#2f7d4f" stroke="#ffffff" stroke-width="3"/>
+<text x="466" y="252" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Lá khoẻ</text>
+<text x="466" y="276" text-anchor="start" font-size="18" fill="#52606d">791 · 50,7%</text>
+<path d="M290,250 L283.4,399.9 A150,150 0 0 1 191.4,363.1 Z" fill="#cf222e" stroke="#ffffff" stroke-width="3"/>
+<text x="225" y="411" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">Nhện đỏ</text>
+<text x="225" y="435" text-anchor="end" font-size="18" fill="#52606d">167 · 10,7%</text>
+<path d="M290,250 L191.4,363.1 A150,150 0 0 1 290.0,100.0 Z" fill="#bf8700" stroke="#ffffff" stroke-width="3"/>
+<text x="125" y="186" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">Gỉ sắt</text>
+<text x="125" y="210" text-anchor="end" font-size="18" fill="#52606d">602 · 38,6%</text>
+<circle cx="290" cy="250" r="82.5" fill="#ffffff"/>
+<text x="290" y="258" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f2933">1.560</text>
+<text x="870" y="30" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Sầu riêng: cân bằng</text>
+<path d="M870,250 L870.0,100.0 A150,150 0 0 1 1004.9,184.5 Z" fill="#2f7d4f" stroke="#ffffff" stroke-width="3"/>
+<text x="963" y="99" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Algal</text>
+<text x="963" y="123" text-anchor="start" font-size="18" fill="#52606d">462 · 17,8%</text>
+<path d="M870,250 L1004.9,184.5 A150,150 0 0 1 992.7,336.3 Z" fill="#bf8700" stroke="#ffffff" stroke-width="3"/>
+<text x="1045" y="262" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Blight</text>
+<text x="1045" y="286" text-anchor="start" font-size="18" fill="#52606d">440 · 17,0%</text>
+<path d="M870,250 L992.7,336.3 A150,150 0 0 1 868.4,400.0 Z" fill="#8250df" stroke="#ffffff" stroke-width="3"/>
+<text x="950" y="405" text-anchor="start" font-size="20" font-weight="bold" fill="#1f2933">Colletotrichum</text>
+<text x="950" y="429" text-anchor="start" font-size="18" fill="#52606d">400 · 15,4%</text>
+<path d="M870,250 L868.4,400.0 A150,150 0 0 1 731.2,306.8 Z" fill="#2563eb" stroke="#ffffff" stroke-width="3"/>
+<text x="771" y="394" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">Healthy</text>
+<text x="771" y="418" text-anchor="end" font-size="18" fill="#52606d">484 · 18,7%</text>
+<path d="M870,250 L731.2,306.8 A150,150 0 0 1 746.8,164.4 Z" fill="#9aa5b1" stroke="#ffffff" stroke-width="3"/>
+<text x="695" y="229" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">Phomopsis</text>
+<text x="695" y="253" text-anchor="end" font-size="18" fill="#52606d">411 · 15,8%</text>
+<path d="M870,250 L746.8,164.4 A150,150 0 0 1 870.0,100.0 Z" fill="#cf6b2e" stroke="#ffffff" stroke-width="3"/>
+<text x="788" y="92" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">Rhizoctonia</text>
+<text x="788" y="116" text-anchor="end" font-size="18" fill="#52606d">398 · 15,3%</text>
+<circle cx="870" cy="250" r="82.5" fill="#ffffff"/>
+<text x="870" y="258" text-anchor="middle" font-size="30" font-weight="bold" fill="#1f2933">2.595</text>
+<line x1="580" y1="20" x2="580" y2="440" stroke="#9aa5b1" stroke-width="1.5"/>
+<text x="290" y="486" text-anchor="middle" font-size="22" font-weight="bold" fill="#cf222e">Nhện đỏ chỉ 10,7%: lớp khó học nhất</text>
+<text x="870" y="486" text-anchor="middle" font-size="22" fill="#52606d">Mỗi lớp 15–19%</text>
+</svg>

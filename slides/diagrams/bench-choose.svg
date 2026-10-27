@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 500" width="1160" height="500" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<line x1="90" y1="400" x2="1120" y2="400" stroke="#e4e7eb" stroke-width="1"/>
+<line x1="90" y1="303" x2="1120" y2="303" stroke="#e4e7eb" stroke-width="1"/>
+<line x1="90" y1="205" x2="1120" y2="205" stroke="#e4e7eb" stroke-width="1"/>
+<line x1="90" y1="108" x2="1120" y2="108" stroke="#e4e7eb" stroke-width="1"/>
+<path d="M470,64 L352,84" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<text x="78" y="406" text-anchor="end" font-size="18" fill="#52606d">0,65</text>
+<text x="78" y="309" text-anchor="end" font-size="18" fill="#52606d">0,70</text>
+<text x="78" y="211" text-anchor="end" font-size="18" fill="#52606d">0,75</text>
+<text x="78" y="114" text-anchor="end" font-size="18" fill="#52606d">0,80</text>
+<text x="90" y="428" text-anchor="middle" font-size="18" fill="#52606d">0</text>
+<text x="319" y="428" text-anchor="middle" font-size="18" fill="#52606d">10</text>
+<text x="548" y="428" text-anchor="middle" font-size="18" fill="#52606d">20</text>
+<text x="777" y="428" text-anchor="middle" font-size="18" fill="#52606d">30</text>
+<text x="1006" y="428" text-anchor="middle" font-size="18" fill="#52606d">40</text>
+<line x1="90" y1="400" x2="1120" y2="400" stroke="#52606d" stroke-width="2"/>
+<line x1="90" y1="30" x2="90" y2="400" stroke="#52606d" stroke-width="2"/>
+<text x="605" y="460" text-anchor="middle" font-size="20" fill="#52606d">Độ trễ trên CPU (ms/ảnh, ONNX, 6 luồng) → càng trái càng nhanh</text>
+<text x="20" y="22" text-anchor="start" font-size="18" fill="#52606d">Macro-F1 RoCoLe</text>
+<circle cx="140" cy="347" r="18" fill="#2563eb" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="172" y="353" text-anchor="start" font-size="18" fill="#1f2933">MobileNetV3-L (16 MB)</text>
+<circle cx="243" cy="199" r="22" fill="#2563eb" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="233" y="245" text-anchor="middle" font-size="18" fill="#1f2933">MobileNetV4-Conv-M (32 MB)</text>
+<circle cx="887" cy="357" r="29" fill="#2563eb" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="843" y="363" text-anchor="end" font-size="18" fill="#1f2933">EfficientNetV2-S (77 MB)</text>
+<circle cx="923" cy="203" r="33" fill="#2563eb" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="923" y="161" text-anchor="middle" font-size="18" fill="#1f2933">ConvNeXt-T (106 MB)</text>
+<circle cx="346" cy="108" r="19" fill="#bf8700" opacity="0.8" stroke="#1e5631" stroke-width="5"/>
+<text x="384" y="134" text-anchor="start" font-size="18" font-weight="bold" fill="#1e5631">DeiT-Tiny (22 MB)</text>
+<circle cx="1035" cy="77" r="33" fill="#bf8700" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="992" y="41" text-anchor="end" font-size="18" fill="#1f2933">Swin-T (108 MB)</text>
+<circle cx="317" cy="182" r="16" fill="#2f7d4f" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="346" y="172" text-anchor="start" font-size="18" fill="#1f2933">MobileViTv2-0.75 (10 MB)</text>
+<circle cx="269" cy="203" r="17" fill="#2f7d4f" opacity="0.8" stroke="#ffffff" stroke-width="1.5"/>
+<text x="299" y="211" text-anchor="start" font-size="18" fill="#1f2933">FastViT-T8 (13 MB)</text>
+<rect x="420" y="8" width="420" height="56" rx="8" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<text x="630" y="44" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Chọn DeiT-Tiny: chính xác, nhẹ, nhanh</text>
+<circle cx="120" cy="50" r="9" fill="#2563eb"/>
+<text x="135" y="57" text-anchor="start" font-size="18" fill="#1f2933">CNN</text>
+<circle cx="206" cy="50" r="9" fill="#bf8700"/>
+<text x="221" y="57" text-anchor="start" font-size="18" fill="#1f2933">ViT</text>
+<circle cx="292" cy="50" r="9" fill="#2f7d4f"/>
+<text x="307" y="57" text-anchor="start" font-size="18" fill="#1f2933">Hybrid</text>
+</svg>

@@ -12,8 +12,8 @@ c = Canvas(W, H)
 
 # Cột trái: thanh chồng, chiều cao tỉ lệ số ảnh.
 PARTS = [  # (số ảnh, nhãn, màu nền, viền)
-    (213, "Kiểm tra: 213", "#f5f7fa", FAINT),
-    (184, "Kiểm định: 184", "#f5f7fa", FAINT),
+    (213, "Kiểm thử: 213", "#f5f7fa", FAINT),
+    (184, "Đánh giá: 184", "#f5f7fa", FAINT),
     (107, "Có nhãn sẵn: 107", *STYLE["sys"]),
     (977, "Che nhãn: 977", "#e4e7eb", MUTED),
 ]
@@ -35,7 +35,7 @@ c.text(BX + BW + 14, POOL_MID + 36, "(nhãn có, nhưng giấu)", size=20, fill=
 # Giữa: vòng lặp bốn bước theo chiều kim đồng hồ.
 L, R, T, B, BOXW, BOXH = 380, 630, 70, 250, 190, 90
 c.box("train", L, T, BOXW, BOXH, ["Huấn luyện", "mô hình mới"], cls="mle")
-c.box("eval", R, T, BOXW, BOXH, ["Chấm điểm", "trên tập kiểm tra"], cls="sys")
+c.box("eval", R, T, BOXW, BOXH, ["Chấm điểm", "trên tập kiểm thử"], cls="sys")
 c.box("pick", R, B, BOXW, BOXH, ["Chiến lược", "chọn N ảnh"], cls="key", bold=True)
 c.box("open", L, B, BOXW, BOXH, ["Mở nhãn có sẵn", "(thay chuyên gia)"], cls="lab")
 c.arrow(("train", "r"), ("eval", "l"))

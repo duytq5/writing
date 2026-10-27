@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 500" width="1160" height="500" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<rect x="790" y="0" width="370" height="446" rx="14" fill="#fafbfc" stroke="#9aa5b1" stroke-width="1.5"/>
+<path d="M345,145 L395,145" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="0" y="70" width="230" height="150" rx="10" fill="#e4e7eb" stroke="#52606d" stroke-width="2"/>
+<text x="115" y="140" text-anchor="middle" font-size="22" font-weight="bold" fill="#1f2933">Thân mô hình</text>
+<text x="115" y="170" text-anchor="middle" font-size="20" fill="#52606d">đóng băng</text>
+<rect x="240" y="105" width="90" height="80" rx="10" fill="#1e5631"/>
+<text x="285" y="152" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Đầu</text>
+<text x="165" y="54" text-anchor="middle" font-size="24" font-weight="bold" fill="#1f2933">1. Linear Probing (3 epoch)</text>
+<text x="165" y="262" text-anchor="middle" font-size="20" fill="#52606d">chỉ học lớp phân loại mới,</text>
+<text x="165" y="288" text-anchor="middle" font-size="20" fill="#52606d">LR 10⁻³</text>
+<rect x="410" y="70" width="230" height="150" rx="10" fill="#e7f0fd" stroke="#2563eb" stroke-width="2"/>
+<text x="525" y="140" text-anchor="middle" font-size="22" font-weight="bold" fill="#1f2933">Thân mô hình</text>
+<text x="525" y="170" text-anchor="middle" font-size="20" fill="#52606d">cập nhật, LR nhỏ</text>
+<rect x="650" y="105" width="90" height="80" rx="10" fill="#1e5631"/>
+<text x="695" y="152" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Đầu</text>
+<text x="575" y="54" text-anchor="middle" font-size="24" font-weight="bold" fill="#1f2933">2. Fine-Tuning (≤ 50 epoch)</text>
+<text x="575" y="262" text-anchor="middle" font-size="20" fill="#52606d">mở toàn bộ, LR thấp,</text>
+<text x="575" y="288" text-anchor="middle" font-size="20" fill="#52606d">tầng gần đầu vào học chậm hơn</text>
+<text x="370" y="356" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">Đầu đã học trước, nên không làm hỏng đặc trưng có sẵn [41]</text>
+<text x="810" y="38" text-anchor="start" font-size="22" font-weight="bold" fill="#1f2933">Siêu tham số chung</text>
+<text x="810" y="88" text-anchor="start" font-size="20" fill="#52606d">Bộ tối ưu</text>
+<text x="1140" y="88" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">AdamW</text>
+<text x="810" y="133" text-anchor="start" font-size="20" fill="#52606d">Tốc độ học (LR)</text>
+<text x="1140" y="133" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">10⁻⁴, tinh chỉnh</text>
+<text x="810" y="178" text-anchor="start" font-size="20" fill="#52606d">Suy giảm trọng số</text>
+<text x="1140" y="178" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">0,05</text>
+<text x="810" y="223" text-anchor="start" font-size="20" fill="#52606d">Epoch tối đa</text>
+<text x="1140" y="223" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">50</text>
+<text x="810" y="268" text-anchor="start" font-size="20" fill="#52606d">Dừng sớm</text>
+<text x="1140" y="268" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">sau 15 epoch</text>
+<text x="810" y="313" text-anchor="start" font-size="20" fill="#52606d">Batch</text>
+<text x="1140" y="313" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">32, cố định</text>
+<text x="810" y="358" text-anchor="start" font-size="20" fill="#52606d">Hàm mất mát</text>
+<text x="1140" y="358" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">cross-entropy</text>
+<text x="810" y="403" text-anchor="start" font-size="20" fill="#52606d">Tăng cường ảnh</text>
+<text x="1140" y="403" text-anchor="end" font-size="20" font-weight="bold" fill="#1f2933">cắt, lật, xoay, màu</text>
+</svg>

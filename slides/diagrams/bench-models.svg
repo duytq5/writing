@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 340" width="1160" height="340" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<rect x="0" y="0" width="520" height="292" rx="16" fill="#fafbfc" stroke="#2563eb" stroke-width="2"/>
+<rect x="560" y="0" width="280" height="292" rx="16" fill="#fafbfc" stroke="#bf8700" stroke-width="2"/>
+<rect x="880" y="0" width="280" height="292" rx="16" fill="#fafbfc" stroke="#2f7d4f" stroke-width="2"/>
+<text x="260" y="38" text-anchor="middle" font-size="24" font-weight="bold" fill="#2563eb">CNN</text>
+<circle cx="65" cy="140" r="25" fill="#2563eb" opacity="0.85"/>
+<text x="65" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">4,2M</text>
+<text x="65" y="236" text-anchor="middle" font-size="20" fill="#1f2933">MobileNet</text>
+<text x="65" y="260" text-anchor="middle" font-size="20" fill="#1f2933">V3-L</text>
+<circle cx="195" cy="140" r="31" fill="#2563eb" opacity="0.85"/>
+<text x="195" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">8,4M</text>
+<text x="195" y="236" text-anchor="middle" font-size="20" fill="#1f2933">MobileNetV4</text>
+<text x="195" y="260" text-anchor="middle" font-size="20" fill="#1f2933">Conv-M</text>
+<circle cx="325" cy="140" r="41" fill="#2563eb" opacity="0.85"/>
+<text x="325" y="146" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">20,2M</text>
+<text x="325" y="236" text-anchor="middle" font-size="20" fill="#1f2933">EfficientNet</text>
+<text x="325" y="260" text-anchor="middle" font-size="20" fill="#1f2933">V2-S</text>
+<circle cx="455" cy="140" r="46" fill="#2563eb" opacity="0.85"/>
+<text x="455" y="146" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">27,8M</text>
+<text x="455" y="236" text-anchor="middle" font-size="20" fill="#1f2933">ConvNeXt-T</text>
+<text x="700" y="38" text-anchor="middle" font-size="24" font-weight="bold" fill="#bf8700">ViT</text>
+<circle cx="630" cy="140" r="27" fill="#bf8700" opacity="0.85"/>
+<text x="630" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">5,5M</text>
+<text x="630" y="236" text-anchor="middle" font-size="20" fill="#1f2933">DeiT-Tiny</text>
+<circle cx="770" cy="140" r="46" fill="#bf8700" opacity="0.85"/>
+<text x="770" y="146" text-anchor="middle" font-size="20" font-weight="bold" fill="#ffffff">27,5M</text>
+<text x="770" y="236" text-anchor="middle" font-size="20" fill="#1f2933">Swin-T</text>
+<text x="1020" y="38" text-anchor="middle" font-size="24" font-weight="bold" fill="#2f7d4f">Hybrid</text>
+<circle cx="950" cy="140" r="22" fill="#2f7d4f" opacity="0.85"/>
+<text x="950" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">2,5M</text>
+<text x="950" y="236" text-anchor="middle" font-size="20" fill="#1f2933">MobileViTv2</text>
+<text x="950" y="260" text-anchor="middle" font-size="20" fill="#1f2933">0.75</text>
+<circle cx="1090" cy="140" r="24" fill="#2f7d4f" opacity="0.85"/>
+<text x="1090" y="146" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">3,3M</text>
+<text x="1090" y="236" text-anchor="middle" font-size="20" fill="#1f2933">FastViT-T8</text>
+<text x="580" y="328" text-anchor="middle" font-size="20" fill="#52606d">Cùng tải trọng số ImageNet-1k · kích thước hình tròn = số tham số (triệu)</text>
+</svg>

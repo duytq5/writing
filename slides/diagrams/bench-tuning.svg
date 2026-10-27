@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 530" width="1160" height="530" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<path d="M100,150 L100,90" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M250,195 L200,195" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M350,90 L350,150" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M200,45 L250,45" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="0" y="0" width="200" height="90" rx="8" fill="#e7f0fd" stroke="#2563eb" stroke-width="2"/>
+<text x="100" y="40" text-anchor="middle" font-size="22" fill="#1f2933">Huấn luyện</text>
+<text x="100" y="66" text-anchor="middle" font-size="22" fill="#1f2933">3 fold</text>
+<rect x="250" y="0" width="200" height="90" rx="8" fill="#eef6f0" stroke="#2f7d4f" stroke-width="2"/>
+<text x="350" y="40" text-anchor="middle" font-size="22" fill="#1f2933">Đọc đường học</text>
+<text x="350" y="66" text-anchor="middle" font-size="22" fill="#1f2933">train và val</text>
+<rect x="250" y="150" width="200" height="90" rx="8" fill="#fff8c5" stroke="#bf8700" stroke-width="2"/>
+<text x="350" y="203" text-anchor="middle" font-size="22" fill="#1f2933">Chẩn đoán</text>
+<rect x="0" y="150" width="200" height="90" rx="8" fill="#fde8e8" stroke="#cf222e" stroke-width="2"/>
+<text x="100" y="190" text-anchor="middle" font-size="22" fill="#1f2933">Chỉnh 1–2 tham số</text>
+<text x="100" y="216" text-anchor="middle" font-size="22" fill="#1f2933">theo bảng</text>
+<text x="225" y="135" text-anchor="middle" font-size="20" fill="#52606d">≤ 5 vòng</text>
+<text x="0" y="290" text-anchor="start" font-size="20" font-weight="bold" fill="#cf222e">Underfitting</text>
+<text x="130" y="290" text-anchor="start" font-size="20" fill="#1f2933">tăng LR ×3</text>
+<text x="0" y="336" text-anchor="start" font-size="20" font-weight="bold" fill="#bf8700">Overfitting</text>
+<text x="130" y="336" text-anchor="start" font-size="20" fill="#1f2933">tăng weight decay, drop path; rồi giảm LR</text>
+<text x="0" y="382" text-anchor="start" font-size="20" font-weight="bold" fill="#52606d">Dao động</text>
+<text x="130" y="382" text-anchor="start" font-size="20" fill="#1f2933">giảm LR</text>
+<text x="0" y="428" text-anchor="start" font-size="20" font-weight="bold" fill="#1e5631">Tốt</text>
+<text x="130" y="428" text-anchor="start" font-size="20" fill="#1f2933">dừng</text>
+<text x="0" y="492" text-anchor="start" font-size="20" font-weight="bold" fill="#1e5631">Chọn vòng có F1 trên tập đánh giá cao nhất</text>
+<text x="560" y="26" text-anchor="start" font-size="22" font-weight="bold" fill="#1f2933">Ví dụ: DeiT-Tiny trên RoCoLe</text>
+<rect x="570" y="211" width="80" height="179" rx="6" fill="#9aa5b1"/>
+<text x="610" y="201" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2933">0,765</text>
+<text x="610" y="418" text-anchor="middle" font-size="20" fill="#1f2933">Vòng 1</text>
+<text x="610" y="444" text-anchor="middle" font-size="16" fill="#52606d">LR 10⁻⁴</text>
+<text x="610" y="466" text-anchor="middle" font-size="16" fill="#52606d">overfitting</text>
+<rect x="688" y="118" width="80" height="272" rx="6" fill="#9aa5b1"/>
+<text x="728" y="108" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2933">0,799</text>
+<text x="728" y="418" text-anchor="middle" font-size="20" fill="#1f2933">Vòng 2</text>
+<text x="728" y="444" text-anchor="middle" font-size="16" fill="#52606d">WD 0,1</text>
+<text x="728" y="466" text-anchor="middle" font-size="16" fill="#52606d">underfitting</text>
+<rect x="806" y="118" width="80" height="272" rx="6" fill="#1e5631"/>
+<text x="846" y="108" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e5631">0,799</text>
+<text x="846" y="418" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2933">Vòng 3</text>
+<text x="846" y="444" text-anchor="middle" font-size="16" fill="#52606d">LR 3·10⁻⁴</text>
+<text x="846" y="466" text-anchor="middle" font-size="16" fill="#52606d">overfitting</text>
+<rect x="924" y="186" width="80" height="204" rx="6" fill="#9aa5b1"/>
+<text x="964" y="176" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2933">0,774</text>
+<text x="964" y="418" text-anchor="middle" font-size="20" fill="#1f2933">Vòng 4</text>
+<text x="964" y="444" text-anchor="middle" font-size="16" fill="#52606d">LR 1,5·10⁻⁴</text>
+<text x="964" y="466" text-anchor="middle" font-size="16" fill="#52606d">overfitting</text>
+<rect x="1042" y="239" width="80" height="151" rx="6" fill="#9aa5b1"/>
+<text x="1082" y="229" text-anchor="middle" font-size="20" font-weight="bold" fill="#1f2933">0,755</text>
+<text x="1082" y="418" text-anchor="middle" font-size="20" fill="#1f2933">Vòng 5</text>
+<text x="1082" y="444" text-anchor="middle" font-size="16" fill="#52606d">LR 7,5·10⁻⁵</text>
+<text x="1082" y="466" text-anchor="middle" font-size="16" fill="#52606d">overfitting</text>
+<text x="860" y="522" text-anchor="middle" font-size="20" fill="#52606d">Sầu riêng: cả 8 mô hình “tốt” ngay vòng 1</text>
+</svg>
