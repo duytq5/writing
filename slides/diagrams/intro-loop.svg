@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 500" width="1160" height="500" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<rect x="20" y="20" width="1120" height="376" rx="18" fill="none" stroke="#1e5631" stroke-width="2" stroke-dasharray="8 6"/>
+<path d="M165,300 L165,116" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M455,338 L290,338" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M870,338 L705,338" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M995,116 L995,300" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M705,78 L870,78" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M290,78 L455,78" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="40" y="40" width="250" height="76" rx="8" fill="#f3e8fd" stroke="#8250df" stroke-width="2"/>
+<text x="165" y="72" text-anchor="middle" font-size="22" fill="#1f2933">Điện thoại</text>
+<text x="165" y="100" text-anchor="middle" font-size="22" fill="#1f2933">gửi ảnh mới</text>
+<rect x="455" y="40" width="250" height="76" rx="8" fill="#eef6f0" stroke="#2f7d4f" stroke-width="2"/>
+<text x="580" y="72" text-anchor="middle" font-size="22" fill="#1f2933">Kho ảnh</text>
+<text x="580" y="100" text-anchor="middle" font-size="22" fill="#1f2933">chưa có nhãn</text>
+<rect x="870" y="40" width="250" height="76" rx="8" fill="#1e5631" stroke="#1e5631" stroke-width="2"/>
+<text x="995" y="72" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">Chọn ảnh “đáng” gán</text>
+<text x="995" y="100" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">(học chủ động)</text>
+<rect x="870" y="300" width="250" height="76" rx="8" fill="#fff8c5" stroke="#bf8700" stroke-width="2"/>
+<text x="995" y="332" text-anchor="middle" font-size="22" fill="#1f2933">Chuyên gia</text>
+<text x="995" y="360" text-anchor="middle" font-size="22" fill="#1f2933">gán nhãn</text>
+<rect x="455" y="300" width="250" height="76" rx="8" fill="#e7f0fd" stroke="#2563eb" stroke-width="2"/>
+<text x="580" y="332" text-anchor="middle" font-size="22" fill="#1f2933">Huấn luyện lại</text>
+<text x="580" y="360" text-anchor="middle" font-size="22" fill="#1f2933">mô hình</text>
+<rect x="40" y="300" width="250" height="76" rx="8" fill="#eef6f0" stroke="#2f7d4f" stroke-width="2"/>
+<text x="165" y="332" text-anchor="middle" font-size="22" fill="#1f2933">Phát hành</text>
+<text x="165" y="360" text-anchor="middle" font-size="22" fill="#1f2933">mô hình mới</text>
+<text x="580" y="222" text-anchor="middle" font-size="24" fill="#52606d">lặp lại liên tục</text>
+<text x="580" y="446" text-anchor="middle" font-size="26" font-weight="bold" fill="#1e5631">MLOps: tự động hoá cả vòng lặp [13]</text>
+<text x="580" y="482" text-anchor="middle" font-size="22" fill="#52606d">Học chủ động: bớt số ảnh chuyên gia phải gán</text>
+</svg>

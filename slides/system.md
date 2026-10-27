@@ -44,44 +44,96 @@ style: |
   section.part { background: var(--brand); color: #ffffff; align-content: center !important; }
   section.part h1 { color: #ffffff; font-size: var(--display); } 
   section.part p { color: var(--brand-soft); font-size: var(--lead); }
----
-
-# Nội dung
-
-- I. Giới thiệu
-- II. Đánh giá mô hình thị giác máy tính
-- III. Mô phỏng học chủ động
-- IV. Nền tảng MLOps
-- V. Hướng phát triển
-
+  section.part::after { color: var(--brand-soft); }
+  /* Trích dẫn: góc dưới trái, tiếng Việt, đặt bằng chỉ thị _footer trên từng slide */
+  footer { left: 60px; right: 140px; bottom: 14px; font-size: 14px; line-height: 1.35; color: var(--muted); text-align: left; }
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # Phần I. Giới thiệu
 
 Bệnh trên lá và chẩn đoán trên điện thoại
 
 <!--
-Tài liệu: writing/chapters/01-intro.md (mục 1.1 Đặt vấn đề, 1.2 Mục tiêu, 1.3 Phạm vi).
+Phần đầu nói vì sao cần đề tài này: bệnh trên lá gây thiệt hại thế nào, người ta chẩn đoán bệnh ra sao, và luận văn làm gì.
 -->
-
 
 ---
 
 # Bệnh trên lá: mất mùa mỗi năm
 
-![w:1160](assets/intro/problem.png)
+<!-- _footer: "[1] S. Savary và c.s., Nature Ecology & Evolution, 2019<br>[6] Đ. P. Vũ, Luận án Phó tiến sĩ Nông nghiệp, Viện KHNN Việt Nam, 1993<br>[7] M. Đảm, Báo Nông nghiệp Việt Nam, 03/2024" -->
+
+![w:1160](diagrams/intro-loss.svg)
 
 <!--
-Sâu bệnh làm mất 10–40% sản lượng nông nghiệp trước thu hoạch, khoảng 220 tỷ USD mỗi năm (CABI). Ở Việt Nam: gỉ sắt làm năng suất cà phê giảm 16–34%; cháy lá làm sản lượng sầu riêng ở Cai Lậy giảm hơn 30%, từ 20 tấn còn 13–14 tấn. Nông dân vẫn phát hiện bằng mắt, khi bệnh đã lan. Nguồn: chapters/01-intro.md, mục 1.1.
+Bệnh trên lá gây thiệt hại lớn cho nông nghiệp. Trên thế giới, bệnh hại làm mất khoảng 30% sản lượng lúa gạo và hơn 21% sản lượng lúa mì.
+Ở Việt Nam, nông lâm nghiệp chiếm khoảng 11,6% GDP. Cà phê và sầu riêng là hai cây chủ lực: Việt Nam sản xuất cà phê Robusta nhiều nhất thế giới, còn sầu riêng xuất khẩu gần 3,2 tỷ USD năm 2024.
+Hai cây này đều bị bệnh lá. Gỉ sắt, như trong ảnh, từng làm năng suất cà phê ở Tây Bắc giảm 16 đến 34%. Năm 2024, 20 đến 30% diện tích sầu riêng ở Cái Bè bị cháy lá.
+Vì vậy, phát hiện bệnh sớm là việc cần thiết.
+
+(Ghi chú: ảnh gỉ sắt lấy từ Wikimedia Commons, cần kiểm tra tác giả và giấy phép.)
+-->
+
+---
+
+# Chẩn đoán bệnh trên lá thế nào?
+
+<!-- _footer: "[8] S. P. Mohanty và c.s., Frontiers in Plant Science, 2016<br>[9] A. Ramcharan và c.s., Frontiers in Plant Science, 2019" -->
+
+![w:1160](diagrams/intro-diagnose.svg)
+
+<!--
+Hiện nay có ba cách chẩn đoán.
+Cách phổ biến nhất là nhìn bằng mắt. Cách này cần người có kinh nghiệm, và dễ nhầm khi nhiều bệnh có triệu chứng giống nhau. Ví dụ, lá sầu riêng bị cháy chưa chắc là do nấm: ở Tiền Giang, phần lớn là do cây suy kiệt gặp nắng nóng.
+Cách thứ hai là gửi mẫu vào phòng thí nghiệm. Kết quả chính xác hơn, nhưng tốn tiền và không làm ngay tại vườn được.
+Cách thứ ba là dùng điện thoại. Người dùng chụp ảnh lá, một mô hình học sâu nhỏ chạy ngay trên máy và cho kết quả, không cần mạng. Luận văn đi theo hướng này.
+-->
+
+---
+
+# Phòng thí nghiệm khác thực địa
+
+<!-- _footer: "[8] S. P. Mohanty và c.s., Frontiers in Plant Science, 2016<br>[11] J. Parraga-Alava và c.s., Data in Brief, 2019<br>[14] T. N. Thanh và c.s., Data in Brief, 2025" -->
+
+![w:1160](diagrams/intro-gap.svg)
+
+<!--
+Nhưng mô hình trên điện thoại gặp một vấn đề. Mohanty và cộng sự huấn luyện mô hình trên bộ PlantVillage, gồm ảnh chụp trong phòng thí nghiệm, và đạt 99,35%. Khi thử trên ảnh từ nguồn khác, độ chính xác chỉ còn khoảng 31%.
+Nguyên nhân chính là dữ liệu. PlantVillage có hơn 54 nghìn ảnh. Hai bộ ảnh chụp ngoài vườn mà luận văn dùng nhỏ hơn rất nhiều: sầu riêng có 2.595 ảnh, RoCoLe có 1.560 ảnh lá cà phê. Tức là ít hơn 20 đến 35 lần.
+-->
+
+---
+
+# Huấn luyện một lần là chưa đủ
+
+<!-- _footer: "[13] D. Kreuzberger, N. Kühl, S. Hirschl, IEEE Access, 2023" -->
+
+![w:1160](diagrams/intro-loop.svg)
+
+<!--
+Vì ảnh thực địa có nhãn còn ít, huấn luyện một lần là chưa đủ. Mô hình cần học tiếp từ ảnh người dùng gửi về.
+Vòng lặp trên slide là như vậy. Điện thoại gửi ảnh mới vào kho. Hệ thống chọn ra những ảnh đáng gán nhãn. Chuyên gia gán nhãn. Mô hình được huấn luyện lại, rồi bản mới được phát hành về điện thoại.
+MLOps giúp tự động hoá cả vòng này. Còn học chủ động giúp chọn đúng ảnh, để chuyên gia không phải gán nhãn quá nhiều.
+-->
+
+---
+
+# Mục tiêu: ba phần nối nhau
+
+![w:1160](diagrams/intro-goals.svg)
+
+<!--
+Từ đó, mục tiêu của luận văn là xây dựng một hệ thống chẩn đoán bệnh lá cà phê và sầu riêng, học tiếp được từ ảnh thực tế với chi phí gán nhãn thấp. Luận văn gồm ba phần nối nhau.
+Phần II so sánh tám mô hình để chọn một mô hình chạy tốt trên điện thoại.
+Phần III dùng mô hình đó để thử xem chọn ảnh bằng học chủ động có tốt hơn chọn ngẫu nhiên không.
+Phần IV xây một nền tảng MLOps, nối việc chọn ảnh, gán nhãn, huấn luyện và phát hành thành một vòng.
 -->
 
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # Phần II. Đánh giá mô hình thị giác máy tính
 
@@ -94,7 +146,6 @@ Tài liệu: repo thesis/, giai đoạn 2: so sánh 10 kiến trúc, chọn Fast
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # Phần III. Mô phỏng học chủ động
 
@@ -214,7 +265,6 @@ Sầu riêng (khá cân bằng): random 0,931, bốn chiến lược còn lại 
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # Phần IV. Nền tảng MLOps
 
@@ -223,7 +273,6 @@ Nhu cầu, giải pháp và demo
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # IV.1 Vì sao cần hệ thống
 
@@ -270,7 +319,6 @@ Từ thí nghiệm học chủ động đến một nền tảng chạy thật
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # IV.2 Giải pháp
 
@@ -409,7 +457,6 @@ Hai job chạy độc lập. Job gán nhãn: hệ thống chụp lại dữ li�
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # IV.3 Demo
 
@@ -579,7 +626,6 @@ Tệp phát hành ghi mô hình và phiên bản mà ứng dụng tải về. K�
 ---
 
 <!-- _class: part -->
-<!-- _paginate: false -->
 
 # Phần V. Hướng phát triển
 

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 500" width="1160" height="500" font-family="Arial, Liberation Sans, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+<rect x="2" y="2" width="336" height="380" rx="16" fill="#e7f0fd" stroke="#2563eb" stroke-width="2.5"/>
+<rect x="410" y="2" width="336" height="380" rx="16" fill="#fff8c5" stroke="#bf8700" stroke-width="2.5"/>
+<rect x="818" y="2" width="336" height="380" rx="16" fill="#eef6f0" stroke="#2f7d4f" stroke-width="2.5"/>
+<path d="M752,192 L812,192" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M344,192 L404,192" fill="none" stroke="#52606d" stroke-width="2" marker-end="url(#ar)"/>
+<text x="170" y="82" text-anchor="middle" font-size="40" font-weight="bold" fill="#2563eb">Phần II</text>
+<text x="170" y="142" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Đánh giá mô hình</text>
+<rect x="100.0" y="252" width="26" height="40" rx="4" fill="#2563eb" opacity="0.45"/>
+<rect x="136.0" y="222" width="26" height="70" rx="4" fill="#2563eb" opacity="0.6"/>
+<rect x="172.0" y="237" width="26" height="55" rx="4" fill="#2563eb" opacity="0.75"/>
+<rect x="208.0" y="202" width="26" height="90" rx="4" fill="#2563eb" opacity="0.8999999999999999"/>
+<text x="170" y="328" text-anchor="middle" font-size="22" fill="#1f2933">Mô hình nào chạy tốt</text>
+<text x="170" y="356" text-anchor="middle" font-size="22" fill="#1f2933">trên điện thoại?</text>
+<text x="578" y="82" text-anchor="middle" font-size="40" font-weight="bold" fill="#bf8700">Phần III</text>
+<text x="578" y="142" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Mô phỏng học chủ động</text>
+<rect x="502.0" y="202" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="542.0" y="202" width="32" height="26" rx="4" fill="#bf8700" stroke="#bf8700" stroke-width="2"/>
+<rect x="582.0" y="202" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="622.0" y="202" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="502.0" y="236" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="542.0" y="236" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="582.0" y="236" width="32" height="26" rx="4" fill="#bf8700" stroke="#bf8700" stroke-width="2"/>
+<rect x="622.0" y="236" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="502.0" y="270" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="542.0" y="270" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="582.0" y="270" width="32" height="26" rx="4" fill="#ffffff" stroke="#bf8700" stroke-width="2"/>
+<rect x="622.0" y="270" width="32" height="26" rx="4" fill="#bf8700" stroke="#bf8700" stroke-width="2"/>
+<text x="578" y="328" text-anchor="middle" font-size="22" fill="#1f2933">Chọn ảnh có hơn</text>
+<text x="578" y="356" text-anchor="middle" font-size="22" fill="#1f2933">chọn ngẫu nhiên?</text>
+<text x="986" y="82" text-anchor="middle" font-size="40" font-weight="bold" fill="#2f7d4f">Phần IV</text>
+<text x="986" y="142" text-anchor="middle" font-size="26" font-weight="bold" fill="#1f2933">Nền tảng MLOps</text>
+<circle cx="986.0" cy="246" r="46" fill="none" stroke="#2f7d4f" stroke-width="7" stroke-dasharray="230 60"/>
+<path d="M1026.0,212 l16,-2 l-6,18 z" fill="#2f7d4f"/>
+<text x="986" y="328" text-anchor="middle" font-size="22" fill="#1f2933">Nối chọn ảnh, gán nhãn,</text>
+<text x="986" y="356" text-anchor="middle" font-size="22" fill="#1f2933">huấn luyện, phát hành</text>
+<text x="374" y="428" text-anchor="middle" font-size="20" fill="#52606d">mô hình đã chọn</text>
+<line x1="374.0" y1="202.0" x2="374.0" y2="404" stroke="#9aa5b1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="782" y="428" text-anchor="middle" font-size="20" fill="#52606d">chiến lược chọn ảnh</text>
+<line x1="782.0" y1="202.0" x2="782.0" y2="404" stroke="#9aa5b1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="580" y="492" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e5631">Một hệ thống chẩn đoán bệnh lá cà phê và sầu riêng, học tiếp từ ảnh thực tế</text>
+</svg>
