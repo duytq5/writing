@@ -2,6 +2,7 @@
 
 Chạy (trong thư mục diagrams):
   python3 p4s.py overview > p4s-overview.svg   bốn khối, ba người, vòng lặp
+  python3 p4s.py want W   > p4s-want-W.svg     một người muốn gì (W = user, lab, eng)
   python3 p4s.py strip N  > p4s-strip-N.svg    dải bốn khối, khối N nổi (N = 1..4)
   python3 p4s.py arch     > p4s-arch.svg       kiến trúc: các thành phần đặt theo nơi chạy
   python3 p4s.py upload   > p4s-upload.svg     luồng 1: ảnh từ điện thoại vào kho
@@ -14,7 +15,7 @@ Các bước theo design doc, mục Main flows F1–F6. SVG đặt 1:1 trên sli
 """
 import sys
 from p4_kit import Svg, BRAND, MUTED, FAINT, INK
-from svgkit import STYLE, width
+from svgkit import STYLE, LINE, width
 
 mode = sys.argv[1] if len(sys.argv) > 1 else "overview"
 FADE = 0.2
@@ -44,6 +45,52 @@ if mode == "overview":
             width_=3, color=BRAND)
     s.text((X[0] + X[3] + BW) / 2, RY + 34, "mô hình mới về điện thoại, vòng lặp tiếp tục", size=22,
            bold=True, fill=BRAND)
+    print(s.svg(), end="")
+
+# ---------------------------------------------------------------- want
+elif mode == "want":
+    # mỗi người muốn gì; ô bên phải cho biết khối nào trong câu chuyện đáp ứng nhu cầu đó
+    WANTS = {
+        "user": ("Người dùng", "người trồng cây", "app", [
+            (["Chụp lá và biết ngay lá bị bệnh gì,", "kể cả ở vườn không có mạng"], 1),
+            (["Dùng một ứng dụng cho nhiều loại cây", "(cà phê, sầu riêng)"], 1),
+            (["Ứng dụng tự nhận mô hình mới,", "đoán đúng hơn theo thời gian"], 4)]),
+        "lab": ("Chuyên gia", "người hiểu bệnh trên lá", "lab", [
+            (["Chỉ gán những ảnh hệ thống chọn,", "không phải lục tìm trong kho ảnh"], 3),
+            (["Thấy sẵn dự đoán của mô hình,", "chỉ cần xác nhận hoặc sửa"], 3),
+            (["Gán nhãn ngay trên trình duyệt,", "đánh dấu được ảnh không phải lá"], 3)]),
+        "eng": ("Kỹ sư", "người vận hành nền tảng", "mle", [
+            (["Xem mọi ảnh gửi về,", "cả ảnh đã và chưa có nhãn"], 2),
+            (["Chọn chiến lược và số ảnh", "cho mỗi lần gán nhãn"], 3),
+            (["So sánh các lần huấn luyện,", "chọn ra mô hình tốt nhất"], 4),
+            (["Phát hành mô hình mới cho điện thoại,", "quay lại bản cũ khi cần"], 4)]),
+    }
+    name, who, cls, wants = WANTS[sys.argv[2]]
+    names = ["Ứng dụng", "Kho ảnh", "Gán nhãn", "Huấn luyện và phát hành"]
+    PW, CX, CW, CH, G, CHIP = 250, 330, 830, 96, 24, 320
+    H = len(wants) * CH + (len(wants) - 1) * G + 4
+    s = Svg(1160, H)
+    fill, stroke = STYLE[cls]
+    # người: thẻ lớn bên trái, giữa chiều cao
+    py, ph = H / 2 - 100, 200
+    s.back.append(f'<rect x="2" y="{py}" width="{PW}" height="{ph}" rx="16" fill="{fill}" stroke="{stroke}" stroke-width="2"/>')
+    cx = 2 + PW / 2
+    s.back.append(f'<circle cx="{cx}" cy="{py + 50}" r="22" fill="{stroke}"/>'
+                  f'<path d="M{cx - 40},{py + 116} a40,36 0 0,1 80,0 z" fill="{stroke}"/>')
+    s.text(cx, py + 152, name, bold=True)
+    s.text(cx, py + 180, who, size=19, fill=MUTED)
+    s.check(name, who, PW - 16, size=19)
+    for i, (lines, blk) in enumerate(wants):
+        y = 2 + i * (CH + G)
+        s.arrow([(PW + 2, H / 2), (PW + 38, H / 2), (PW + 38, y + CH / 2), (CX - 3, y + CH / 2)], color=stroke)
+        s.back.append(f'<rect x="{CX}" y="{y}" width="{CW - 2}" height="{CH}" rx="10" fill="#ffffff" '
+                      f'stroke="{stroke}" stroke-width="2"/>')
+        for j, t in enumerate(lines):
+            s.check(name, t, CW - CHIP - 40)
+            s.text(CX + 22, y + CH / 2 - LINE / 2 + 8 + j * LINE, t, anchor="start")
+        bcls = BLOCKS[blk - 1][0]
+        s.box(f"chip{i}", CX + CW - CHIP - 14, y + 18, CHIP, CH - 36, f"{blk}  {names[blk - 1]}", cls=bcls,
+              sub_size=18, bold=False)
     print(s.svg(), end="")
 
 # ---------------------------------------------------------------- strip

@@ -45,8 +45,51 @@ style: |
   section.part h1 { color: #ffffff; font-size: var(--display); } 
   section.part p { color: var(--brand-soft); font-size: var(--lead); }
   section.part::after { color: var(--brand-soft); }
+  /* Trang bìa: nền trắng, logo góc trên trái, tên trường bên cạnh, tên đề tài ở giữa */
+  section.title { text-align: center; align-content: center !important; }
+  section.title p:first-of-type { position: absolute; left: 60px; top: 40px; margin: 0; }
+  section.title p:nth-of-type(2) { margin: 0 0 70px 190px; font-family: "Times New Roman", Times, serif; font-size: 30px; line-height: 1.35; }
+  section.title h1 { color: var(--ink); font-size: 46px; line-height: 1.25; margin: 0 40px 70px; }
+  section.title p:nth-of-type(3) { font-size: var(--body); line-height: 1.8; }
+  /* Mục lục: danh sách chữ lớn */
+  section.outline ul { font-size: 34px; line-height: 1.9; margin-top: 40px; }
   /* Trích dẫn: góc dưới trái, tiếng Việt, đặt bằng chỉ thị _footer trên từng slide */
   footer { left: 60px; right: 140px; bottom: 12px; font-size: 12px; line-height: 1.3; color: var(--muted); text-align: left; }
+---
+
+<!-- _class: title -->
+
+![h:150](assets/title/hcmus-logo.png)
+
+**Khoa Công nghệ Thông tin**
+Trường Đại học Khoa học Tự nhiên – ĐHQG-HCM
+TP. Hồ Chí Minh
+
+# Xây dựng hệ thống vận hành học máy tích hợp học chủ động cho chẩn đoán bệnh trên lá cây sầu riêng và cà phê
+
+Trần Quang Duy – 24C12027
+Người hướng dẫn: TS. Cấn Trần Thành Trung
+
+<!--
+Kính chào thầy cô trong hội đồng. Em là Trần Quang Duy, học viên cao học ngành Hệ thống thông tin. Em xin trình bày luận văn: Xây dựng hệ thống vận hành học máy tích hợp học chủ động cho chẩn đoán bệnh trên lá cây sầu riêng và cà phê, dưới sự hướng dẫn của TS. Cấn Trần Thành Trung.
+-->
+
+---
+
+<!-- _class: outline -->
+
+# Nội dung trình bày
+
+- Giới thiệu
+- Đánh giá mô hình thị giác máy tính
+- Mô phỏng học chủ động
+- Nền tảng MLOps
+- Kết luận và hướng phát triển
+
+<!--
+Bài trình bày có năm phần. Phần I nói vì sao cần đề tài. Phần II so sánh tám mô hình để chọn mô hình cho điện thoại. Phần III giả lập học chủ động để xem cách chọn ảnh nào giúp ít nhãn hơn. Phần IV là nền tảng MLOps nối tất cả lại. Phần V là kết luận và hướng phát triển.
+-->
+
 ---
 
 <!-- _class: part -->
@@ -318,21 +361,6 @@ Gán nhãn ảnh nào trước khi chuyên gia có hạn?
 
 ---
 
-# Vấn đề: ít ảnh lá thực địa có nhãn
-
-<!-- _footer: "[8] S. P. Mohanty, D. P. Hughes, và M. Salathé, “Using Deep Learning for Image-Based Plant Disease Detection”, Frontiers in Plant Science, vol 7, tr 1419, 2016.<br>[11] J. Parraga-Alava, K. Cusme, A. Loor, và E. Santander, “RoCoLe: A robusta coffee leaf images dataset for evaluation of machine learning based methods in plant diseases recognition”, Data in Brief, vol 25, tr 104414, 2019.<br>[14] T. N. Thanh, L. X. Nguyen, T. Cap, và T. Le, “A durian leaf image dataset of common diseases in Vietnam for agricultural diagnosis”, Data in Brief, vol 61, tr 111845, 2025." -->
-
-
-![w:1160](diagrams/al-problem.svg)
-
-<!--
-Ảnh lá ngoài vườn khác ảnh phòng thí nghiệm: nền rối, ánh sáng thay đổi, lá che nhau. Mô hình học trên ảnh nền trơn chẩn đoán kém ngoài thực địa.
-Bộ thực địa thì rất nhỏ: sầu riêng (dữ liệu Việt Nam) 2.595 ảnh, RoCoLe 1.560 ảnh, so với 54.306 ảnh của PlantVillage. Gán thêm nhãn cần chuyên gia nông nghiệp, nên tốn kém.
-Nguồn: PlantVillage theo Mohanty và cộng sự [8]; RoCoLe [11]; sầu riêng [14].
--->
-
----
-
 # Cơ hội và khó khăn
 
 ![w:1160](diagrams/al-challenge.svg)
@@ -569,13 +597,49 @@ Câu hỏi của phần này: làm sao để chiếc lá này quay lại giúp m
 
 ---
 
-# Bốn khối, ba người
+# High level architecture
 
 ![w:1160](diagrams/p4s-overview.svg)
 
 <!--
 Hệ thống có bốn khối nối thành một vòng. Ứng dụng chẩn đoán và gửi ảnh về. Kho ảnh giữ mọi ảnh gửi về, lúc đầu chưa có nhãn. Gán nhãn: chuyên gia gán nhãn cho những ảnh được chọn. Huấn luyện và phát hành: kỹ sư huấn luyện mô hình mới rồi gửi về điện thoại.
 Ba người, mỗi người chỉ làm một việc: người dùng chụp lá, chuyên gia gán nhãn, kỹ sư mở job bằng pull request.
+-->
+
+---
+
+# Là một người dùng, tôi muốn…
+
+![w:1160](diagrams/p4s-want-user.svg)
+
+<!--
+Người dùng là người trồng cây. Họ cần biết lá bị bệnh gì ngay tại vườn, nơi thường không có mạng, nên mô hình phải chạy trên điện thoại.
+Một ứng dụng dùng cho nhiều loại cây, hiện có cà phê và sầu riêng.
+Họ không cần biết gì về mô hình: ứng dụng tự nhận mô hình mới mỗi khi kỹ sư phát hành.
+-->
+
+---
+
+# Là một chuyên gia gán nhãn, tôi muốn…
+
+![w:1160](diagrams/p4s-want-lab.svg)
+
+<!--
+Chuyên gia là người hiểu bệnh trên lá. Thời gian của họ đắt nhất, nên họ chỉ gán những ảnh hệ thống đã chọn.
+Mỗi ảnh có sẵn dự đoán của mô hình, chuyên gia chỉ xác nhận hoặc sửa. Ảnh chụp nhầm, không phải lá, thì đánh dấu để bỏ ra.
+Mọi việc làm trên trình duyệt, không cài thêm gì.
+-->
+
+---
+
+# Là một kỹ sư, tôi muốn…
+
+![w:1160](diagrams/p4s-want-eng.svg)
+
+<!--
+Kỹ sư vận hành nền tảng. Kỹ sư cần xem toàn bộ kho ảnh, quyết định mỗi lần gán nhãn dùng chiến lược nào và chọn bao nhiêu ảnh.
+Sau khi huấn luyện, kỹ sư so sánh các lần chạy, phát hành mô hình tốt nhất cho điện thoại, và quay lại bản cũ nếu bản mới có vấn đề.
+Ô bên phải mỗi nhu cầu cho biết khối nào trong bốn khối đáp ứng nó. Các slide tiếp theo đi qua từng khối.
 -->
 
 ---
@@ -692,7 +756,7 @@ Phát hành cũng là một pull request: GPU Worker xuất mô hình sang ONNX,
 
 <!-- _class: part -->
 
-# Phần V. Hướng phát triển
+# Phần V. Kết luận và hướng phát triển
 
 Đang soạn
 
